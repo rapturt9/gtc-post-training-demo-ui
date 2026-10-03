@@ -1,0 +1,88 @@
+{
+  "schema": "depthfirst.rl-sanitized-trace-manifest.v1",
+  "trainer_job_id": "nemotron-nvd-baseline-async_20261001_215436_92c745",
+  "source_langfuse_cache_sha256": "d15d7a9aef0ca1fa9405981f560a1d1b45a5ec43c2117947ff60bb32b0558881",
+  "exports": [
+    {
+      "file": "openfire-base.json",
+      "task_name": "Openfire",
+      "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+      "policy_step": 5,
+      "events": 49,
+      "bytes": 74588,
+      "sha256": "57eeb1cc4ebcd2fd0f0d59b7f49eab93759a0222979d92c5bd71e664766929b1",
+      "terminal_valid": true
+    },
+    {
+      "file": "openfire-final.json",
+      "task_name": "Openfire",
+      "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+      "policy_step": 200,
+      "events": 100,
+      "bytes": 151299,
+      "sha256": "0cfb815fb7ff29e80b678b2d5392b1875582470d8a6a7f0c2252ef924572b84d",
+      "terminal_valid": true
+    },
+    {
+      "file": "cosmos-base.json",
+      "task_name": "OpenC3 COSMOS",
+      "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+      "policy_step": 5,
+      "events": 256,
+      "bytes": 383634,
+      "sha256": "a2a07985b301a1be3387d864c465904e6e573fe0db34951333e1e6736a870645",
+      "terminal_valid": true
+    },
+    {
+      "file": "cosmos-final.json",
+      "task_name": "OpenC3 COSMOS",
+      "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+      "policy_step": 200,
+      "events": 153,
+      "bytes": 233586,
+      "sha256": "af8a09fba6c52809f4336ba3fcc45d8b25e53747a9faef504dcc83784c2452a7",
+      "terminal_valid": true
+    },
+    {
+      "file": "setvalue-base.json",
+      "task_name": "set-value",
+      "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+      "policy_step": 5,
+      "events": 67,
+      "bytes": 100694,
+      "sha256": "070abcd12e1fa7280e0e6355c768c136b8dd8a4666c4f1534f336f2fb4459aad",
+      "terminal_valid": true
+    },
+    {
+      "file": "setvalue-final.json",
+      "task_name": "set-value",
+      "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+      "policy_step": 200,
+      "events": 34,
+      "bytes": 51508,
+      "sha256": "77ccf8984eb51af44ec5138c14e0eb7b732039b918cab9897c8801ad494471d4",
+      "terminal_valid": true
+    },
+    {
+      "file": "jenkins-base.json",
+      "task_name": "Jenkins",
+      "trace_id": "baca55768967b765d6824c7168d8a6f7",
+      "policy_step": 5,
+      "events": 77,
+      "bytes": 116920,
+      "sha256": "d9eb31e2f675d6ec915577fabe8f07798954d821c9b9b3be8ce59e4bec411de7",
+      "terminal_valid": true
+    },
+    {
+      "file": "jenkins-final.json",
+      "task_name": "Jenkins",
+      "trace_id": "cd08048b04db793a96d5ab19789f2718",
+      "policy_step": 200,
+      "events": 97,
+      "bytes": 146621,
+      "sha256": "4171fd6fd6d1622ad3444af815c2f99c14ad757c167f535874dd92a1a989525a",
+      "terminal_valid": true
+    }
+  ],
+  "selection": "Two valid miss-to-match pairs, one valid match-to-match efficiency pair, and one valid regression counterexample. Exceptions and discarded rollouts excluded."
+}

@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "trainer_job_id": "nemotron-nvd-baseline-async_20261001_215436_92c745",
+  "experiment_name": "Nemotron NVD asynchronous RL, final policy step 200",
+  "base_label": "Base (policy step 5, already trained)",
+  "final_label": "Final (policy step 200)",
+  "zero_step_baseline": "unavailable: S3 periodic eval prefix begins at step 5; no untouched/pretraining score established here.",
+  "cohort": {
+    "state": "verified",
+    "source_name": "ghsa_holdout",
+    "tasks": 20,
+    "attempts_per_task": 4,
+    "attempts_per_checkpoint": 80,
+    "periodic_eval_checkpoints": 40,
+    "policy_steps": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70,
+      75,
+      80,
+      85,
+      90,
+      95,
+      100,
+      105,
+      110,
+      115,
+      120,
+      125,
+      130,
+      135,
+      140,
+      145,
+      150,
+      155,
+      160,
+      165,
+      170,
+      175,
+      180,
+      185,
+      190,
+      195,
+      200
+    ],
+    "fixed_task_identity": true,
+    "training_holdout_disjointness": "unavailable: name says holdout, but exact training overlap and selected split config not reconciled."
+  },
+  "headline": {
+    "state": "derived",
+    "mean_reward_base": 0.16875,
+    "mean_reward_final": 0.2625,
+    "mean_reward_change": 0.09375,
+    "full_credit_reports_base": 10,
+    "full_credit_reports_final": 20,
+    "attempt_denominator": 80,
+    "tasks_with_any_success_base": 9,
+    "tasks_with_any_success_final": 7,
+    "task_denominator": 20
+  },
+  "confidence_intervals": {
+    "state": "derived",
+    "method": "Paired percentile bootstrap over 20 CVE task clusters, sorting by CVE entry ID and keeping each task\u2019s four attempts and base/final pair together; 20,000 resamples; numpy random default_rng seed 17; 95% interval. Descriptive across this fixed task set, not a clean estimate against an untouched baseline.",
+    "base": [
+      0.07393229166666668,
+      0.2802083333333333
+    ],
+    "final": [
+      0.09375,
+      0.44375
+    ],
+    "change": [
+      -0.009375,
+      0.21250000000000005
+    ],
+    "change_includes_zero": true
+  },
+  "metric_semantics": {
+    "mean_reward": "Arithmetic mean of recorded scalar rewards, including failures at zero. The current source implementation awards full credit on a judge pass and can discount excess findings. This run contains partial reward values. Do not label this as accuracy, recall or precision.",
+    "full_credit_reports": "Count of recorded rewards equal to exactly 1.0. This is a descriptive reward category, not independent exploit confirmation.",
+    "successful_attempts": "Recorded aggregate success metric agrees exactly with rewards greater than zero on all 40 manifests. Per-case success counts in the matrix are derived from reward>0, not independently read back from rollout success flags.",
+    "pass_at_4": "Fraction of the 20 tasks with at least one successful attempt among four. It fell from 9/20 to 7/20 between the selected checkpoints.",
+    "failures": "Report terminal failures separately; step 5 has 18 structured-output exceptions, step 200 has 4 structured-output and 2 unknown exceptions. These are included at zero reward.",
+    "step": "Manifests and completion log name policy_step=200. Current async loop increments global policy step by optimizer_steps and tracks train_batch_idx separately. Exact training batch index/config unavailable; label policy step rather than blindly equating it to batch count."
+  },
+  "checkpoint_lineage": {
+    "state": "verified",
+    "sampler_uri": "tinker://7d09737f-5aec-521d-af89-25b2f7004801:train:0/sampler_weights/final",
+    "optimizer_uri": "tinker://7d09737f-5aec-521d-af89-25b2f7004801:train:0/weights/final",
+    "log_uri": "s3://patcherai-prod-runs/rl_training/observability/orchestrator-nemotron-nvd-baseline-async-20261001-145108/logs/d14724eb-1c73-4aee-b8a5-c2218c7602e0/tail.log",
+    "log_sha256": "02b730e46840f8fc43015981c0bd7846559c5a37d53b1a62228434307534c386",
+    "events": [
+      {
+        "line": 1508,
+        "text": "post_training.rl_framework.core.periodic_evaluation [INFO] [periodic-eval] completed step=200 policy_step=200 groups=20 rollouts=80 elapsed=489.6s"
+      },
+      {
+        "line": 1509,
+        "text": "tinker_cookbook.checkpoint_utils [INFO] Saved checkpoints: {'state_path': 'tinker://7d09737f-5aec-521d-af89-25b2f7004801:train:0/weights/final', 'sampler_path': 'tinker://7d09737f-5aec-521d-af89-25b2f7004801:train:0/sampler_weights/final'}"
+      },
+      {
+        "line": 1511,
+        "text": "post_training.rl_framework.training_backends.tinker.backend [INFO] [step 200] final checkpoint saved"
+      },
+      {
+        "line": 1512,
+        "text": "post_training.rl_framework.core.loops.staleness_bounded_async [INFO] [staleness-bounded-async] backend closed success=True"
+      }
+    ],
+    "interpretation": "The periodic evaluation at policy step200 completed before the final sampler/optimizer save, and the backend then closed successfully. Exact checkpoint matching is supported by this log ordering and step label."
+  },
+  "wandb": {
+    "user_supplied_url": "https://forge.coreweave.com/wandb/depthfirst/NVD_TRAINING/runs/orchestrator-nemotron-nvd-baseline-async-20261001-145108",
+    "recorded_log_url": "https://wandb.ai/depthfirst/NVD_TRAINING/runs/orchestrator-nemotron-nvd-baseline-async-20261001-145108",
+    "state": "unavailable live readback; user Forge link and log identity align by project/run ID. Forge browser fetch returned an internal error; no credentials were sent to a guessed endpoint. S3 manifests are the verified metric source."
+  },
+  "unknowns": [
+    "Exact deployed judge model/config and finding_budget not recorded in these manifests. Current source illustrates metric semantics, not proof of the deployed revision.",
+    "Exact train mixture/split and heldout disjointness unreconciled.",
+    "No untouched model score exists in this periodic-eval prefix.",
+    "The 40 repeated periodic evaluations reuse the same tasks; the curve is development evidence, not an independent final holdout claim.",
+    "Failures contaminate the raw score as zeros; failure reduction can contribute to reward changes."
+  ],
+  "source_implementation": {
+    "state": "inferred consistency only; local source hashes, not independently proven deployment source identity",
+    "files": [
+      {
+        "path": "post_training/agents/vulnerability_discovery/nvd_detection/reward.py",
+        "sha256": "f3af6bd996e644e1704dc51a384d8d456851e9e940ecbed36217e7baf21d35ac"
+      },
+      {
+        "path": "vms/eval/agents/vulnerability_discovery_training/evaluator.py",
+        "sha256": "95db6b4ef1f5e04722a66b9ff1b502bd7e827aab3508d198a584f8e690bdcfce"
+      },
+      {
+        "path": "post_training/rl_framework/core/periodic_evaluation.py",
+        "sha256": "d7b353f8a0b8c24c897142af430f6cfbf233bf95e0c2a295843d8f88507e43ee"
+      },
+      {
+        "path": "post_training/rl_framework/core/loops/staleness_bounded_async.py",
+        "sha256": "9d19c563f90bb87309330d8f2d4e2d797dbdc48d4f1abd0d209a5b6ec641182a"
+      },
+      {
+        "path": "post_training/rl_framework/observability/rollout_batch_metrics.py",
+        "sha256": "ce8388c586ddf353efae6edb76b2eecd415261816244f20d89cf33e2b11c27eb"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "step": 5,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000005/manifest.json",
+      "sha256": "3c2061194fdc5cea549f16eb7b65d582e3b04672661404ebb53461884dc397c4"
+    },
+    {
+      "step": 10,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000010/manifest.json",
+      "sha256": "16cf7e7a843596de2fc302091c475012b39f9e938970368b6087b7c09b5a2ff6"
+    },
+    {
+      "step": 15,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000015/manifest.json",
+      "sha256": "8ca679bb360154e3f9061f26e8c6bf6d8f483555b5283259a279f0aaa968100b"
+    },
+    {
+      "step": 20,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000020/manifest.json",
+      "sha256": "bca0bc80ef12168e4e6f3b1e9456249a7a5d9a050d6b960bf83ebde7a650bf32"
+    },
+    {
+      "step": 25,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000025/manifest.json",
+      "sha256": "2a1465b1dd2824aa29d9594573bd6bad7324d9bea6a19e99f857e484164faffc"
+    },
+    {
+      "step": 30,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000030/manifest.json",
+      "sha256": "79cd3788750fe8f58887474798b464f467f53b813ef43fd5429aca87f5b95bcf"
+    },
+    {
+      "step": 35,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000035/manifest.json",
+      "sha256": "e7304e034dbd78af2000d2adbdcefbec8ec8c4fc3a2792dd82b2a27f87a1a646"
+    },
+    {
+      "step": 40,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000040/manifest.json",
+      "sha256": "8e94f0c2f901dc623e86c1cb020dbc90ad478be881ef19a18510309e068d5ca8"
+    },
+    {
+      "step": 45,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000045/manifest.json",
+      "sha256": "6c5b3b015c13b0e920a5b6dc20a92cd7916df9c97f955775ce7a311512a0fe80"
+    },
+    {
+      "step": 50,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000050/manifest.json",
+      "sha256": "d9516499856a901e578add43ad199e976a7367eb7ea57a58b2eb7c9a7b62651d"
+    },
+    {
+      "step": 55,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000055/manifest.json",
+      "sha256": "1270553e53422dbfb143e59b2a0c5015dea48e9c6926b9ef3c4eb865696f9998"
+    },
+    {
+      "step": 60,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000060/manifest.json",
+      "sha256": "e509ada704480509466847c215482eba76bf28aa339604ce61a0fa88300249e1"
+    },
+    {
+      "step": 65,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000065/manifest.json",
+      "sha256": "37dd5103af1f87fa867b54ddeab24bbe7fe018e1bf66ba0ce019712035e55e4a"
+    },
+    {
+      "step": 70,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000070/manifest.json",
+      "sha256": "4d12c662aa48cff039194ec321983a7b6ba624ec67f3b59b2ca7502515c2d2e0"
+    },
+    {
+      "step": 75,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000075/manifest.json",
+      "sha256": "38b3f6afef983be47d808e76408ddf1b2ab99885f52650e7983949e9c506191e"
+    },
+    {
+      "step": 80,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000080/manifest.json",
+      "sha256": "68c886c445a893a1027f2e01d55c71230915c43c1d5c0224149b4c248ea5cd12"
+    },
+    {
+      "step": 85,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000085/manifest.json",
+      "sha256": "fa8a7d7fbffc9c3c52bb0f976894a8264d135d1f09e863a894f782b546d88469"
+    },
+    {
+      "step": 90,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000090/manifest.json",
+      "sha256": "593f747993efea87c99e839d7e8b129d8c808020403f83cdaeaa3338ebc21dd3"
+    },
+    {
+      "step": 95,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000095/manifest.json",
+      "sha256": "dbe3c5e17a398bd728d98d4e9de71c8fe369e322a822c1991b7a33381e5823ed"
+    },
+    {
+      "step": 100,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000100/manifest.json",
+      "sha256": "f0431ccf2d7c3622cc0e3b0362eeae5f1215f021dbc19277ef184dd86da3d774"
+    },
+    {
+      "step": 105,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000105/manifest.json",
+      "sha256": "e5199fd4f3b4b696c7857dd4680a2b909465e8996061e6ca2b7c90e9d0441058"
+    },
+    {
+      "step": 110,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000110/manifest.json",
+      "sha256": "7f2025ffde9d16dffb840b272ffed96b13aa152552f44fd1a2dbf93e9a64422d"
+    },
+    {
+      "step": 115,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000115/manifest.json",
+      "sha256": "672738ba349c57c41d54671a338a90774421b93791f763431f4d3513b6cb7b02"
+    },
+    {
+      "step": 120,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000120/manifest.json",
+      "sha256": "2492aecce17aa5b908aad4777f60682aeead09b3cda2e328c8b465424ae7bc4a"
+    },
+    {
+      "step": 125,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000125/manifest.json",
+      "sha256": "4b8e8fa8f24107471f6d39de3753d3946eda526a1bcd08d4ac31a2e43bd507fd"
+    },
+    {
+      "step": 130,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000130/manifest.json",
+      "sha256": "61e8d7f8e0fa93ff9c57fa5910dba132d8dd23449bee5607ba46854511e3431d"
+    },
+    {
+      "step": 135,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000135/manifest.json",
+      "sha256": "5614a047622a83f1486efeb9d76d72ba3d4cdcd4e8abfef3a8a37e2906dfd04d"
+    },
+    {
+      "step": 140,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000140/manifest.json",
+      "sha256": "99fbeb486f64029fd01313afd04a885f85fb565484e734899323341cb7ec61fb"
+    },
+    {
+      "step": 145,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000145/manifest.json",
+      "sha256": "b43c78a06a731b93ad698f94f6433bfc7e9d7ab7bf76d4131d860a266d4ab5c0"
+    },
+    {
+      "step": 150,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000150/manifest.json",
+      "sha256": "7d37e9fe42442e8cc02424d90565cc1762846336736250b729bb5fbeb6681588"
+    },
+    {
+      "step": 155,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000155/manifest.json",
+      "sha256": "0e0a394f4943426516b922a2625951f960debc9002145e141adfb3638dd0af06"
+    },
+    {
+      "step": 160,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000160/manifest.json",
+      "sha256": "6b2aaa988ddb082f98d4252672af356bf9a1ab369b8dd47a4b35f27e8ac32921"
+    },
+    {
+      "step": 165,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000165/manifest.json",
+      "sha256": "03ac328c9c96f01594f889af4226cedb955c4190c3f46143b71a460f25dfcf6c"
+    },
+    {
+      "step": 170,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000170/manifest.json",
+      "sha256": "2b6b26db492847489424e3dfcbe854cf19480808efb65306310e6de5490381bd"
+    },
+    {
+      "step": 175,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000175/manifest.json",
+      "sha256": "3162ab9381b27f003abd381534fb5bb59a74d2f3264d8748c73bbb5f89cf2cbf"
+    },
+    {
+      "step": 180,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000180/manifest.json",
+      "sha256": "872e6ff0abb76a881ac455006e0104be3639126fdcd4de5bffa7a75969bb8be4"
+    },
+    {
+      "step": 185,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000185/manifest.json",
+      "sha256": "123b4494c948e5cefe613bf2e4a39e8449da5c4dc96b835bde363f3ef3992823"
+    },
+    {
+      "step": 190,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000190/manifest.json",
+      "sha256": "c14862330b7113aa7d8136b9927f8572b976606e2ff6568092a7381574c0a679"
+    },
+    {
+      "step": 195,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000195/manifest.json",
+      "sha256": "12cabf8b13e0322dfe3f13c3c8cf090e5b51c00ad82880a902c5a95b5c12c571"
+    },
+    {
+      "step": 200,
+      "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000200/manifest.json",
+      "sha256": "7efbdfd6fecd1f372c6d765766cbe7a630b268fb536491114828cb77be6c2b1a"
+    }
+  ],
+  "latest_pointer": {
+    "uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/latest.json",
+    "sha256": "bd04a2267ddba53aa1e1fa8467c740bcd4c4a9747badd31cde3c3ba8a34cb445"
+  },
+  "reproduction_script_sha256": "6f9fe75ee2ec14a57ef8c0e8a3dd3eb2beddf41dfb573c5c0d0bad927ac07fd3",
+  "files": {
+    "series": "metric-series.json",
+    "matrix": "paired-task-matrix.json",
+    "summary": "quant-evidence.json"
+  },
+  "no_paid_calls_or_remote_mutations": true
+}

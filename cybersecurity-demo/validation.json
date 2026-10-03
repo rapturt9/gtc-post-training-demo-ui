@@ -1,0 +1,88 @@
+{
+  "status": 200,
+  "case_switches": [
+    "Openfire",
+    "OpenC3 COSMOS",
+    "set-value"
+  ],
+  "keyboard": [
+    {
+      "case": "Openfire",
+      "key": "ArrowRight",
+      "stage": "2Report"
+    },
+    {
+      "case": "Openfire",
+      "key": "ArrowRight",
+      "stage": "3Check"
+    },
+    {
+      "case": "Openfire",
+      "key": "ArrowLeft",
+      "stage": "2Report"
+    },
+    {
+      "case": "Openfire",
+      "key": "ArrowLeft",
+      "stage": "1Read the code"
+    },
+    {
+      "case": "OpenC3 COSMOS",
+      "key": "ArrowRight",
+      "stage": "2Report"
+    },
+    {
+      "case": "OpenC3 COSMOS",
+      "key": "ArrowRight",
+      "stage": "3Check"
+    },
+    {
+      "case": "OpenC3 COSMOS",
+      "key": "ArrowLeft",
+      "stage": "2Report"
+    },
+    {
+      "case": "OpenC3 COSMOS",
+      "key": "ArrowLeft",
+      "stage": "1Read the code"
+    },
+    {
+      "case": "set-value",
+      "key": "ArrowRight",
+      "stage": "2Report"
+    },
+    {
+      "case": "set-value",
+      "key": "ArrowRight",
+      "stage": "3Check"
+    },
+    {
+      "case": "set-value",
+      "key": "ArrowLeft",
+      "stage": "2Report"
+    },
+    {
+      "case": "set-value",
+      "key": "ArrowLeft",
+      "stage": "1Read the code"
+    }
+  ],
+  "errors": [],
+  "failed_requests": [],
+  "table_rows": 20,
+  "chart": {
+    "complete": true,
+    "width": 730,
+    "source": "/cybersecurity-demo/results/rl-reward-dark.svg"
+  },
+  "desktop": {
+    "viewport": 1440,
+    "width": 1440,
+    "overflow": false
+  },
+  "mobile": {
+    "viewport": 390,
+    "width": 390,
+    "overflow": false
+  }
+}

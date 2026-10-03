@@ -1,0 +1,242 @@
+[
+  {
+    "step": 5,
+    "mean_reward": 0.16875,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000005/manifest.json",
+    "manifest_sha256": "3c2061194fdc5cea549f16eb7b65d582e3b04672661404ebb53461884dc397c4"
+  },
+  {
+    "step": 10,
+    "mean_reward": 0.18125,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000010/manifest.json",
+    "manifest_sha256": "16cf7e7a843596de2fc302091c475012b39f9e938970368b6087b7c09b5a2ff6"
+  },
+  {
+    "step": 15,
+    "mean_reward": 0.18958333333333333,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000015/manifest.json",
+    "manifest_sha256": "8ca679bb360154e3f9061f26e8c6bf6d8f483555b5283259a279f0aaa968100b"
+  },
+  {
+    "step": 20,
+    "mean_reward": 0.24562499999999998,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000020/manifest.json",
+    "manifest_sha256": "bca0bc80ef12168e4e6f3b1e9456249a7a5d9a050d6b960bf83ebde7a650bf32"
+  },
+  {
+    "step": 25,
+    "mean_reward": 0.2517857142857143,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000025/manifest.json",
+    "manifest_sha256": "2a1465b1dd2824aa29d9594573bd6bad7324d9bea6a19e99f857e484164faffc"
+  },
+  {
+    "step": 30,
+    "mean_reward": 0.23229166666666665,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000030/manifest.json",
+    "manifest_sha256": "79cd3788750fe8f58887474798b464f467f53b813ef43fd5429aca87f5b95bcf"
+  },
+  {
+    "step": 35,
+    "mean_reward": 0.2265625,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000035/manifest.json",
+    "manifest_sha256": "e7304e034dbd78af2000d2adbdcefbec8ec8c4fc3a2792dd82b2a27f87a1a646"
+  },
+  {
+    "step": 40,
+    "mean_reward": 0.22916666666666666,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000040/manifest.json",
+    "manifest_sha256": "8e94f0c2f901dc623e86c1cb020dbc90ad478be881ef19a18510309e068d5ca8"
+  },
+  {
+    "step": 45,
+    "mean_reward": 0.21979166666666666,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000045/manifest.json",
+    "manifest_sha256": "6c5b3b015c13b0e920a5b6dc20a92cd7916df9c97f955775ce7a311512a0fe80"
+  },
+  {
+    "step": 50,
+    "mean_reward": 0.26666666666666666,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000050/manifest.json",
+    "manifest_sha256": "d9516499856a901e578add43ad199e976a7367eb7ea57a58b2eb7c9a7b62651d"
+  },
+  {
+    "step": 55,
+    "mean_reward": 0.24895833333333334,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000055/manifest.json",
+    "manifest_sha256": "1270553e53422dbfb143e59b2a0c5015dea48e9c6926b9ef3c4eb865696f9998"
+  },
+  {
+    "step": 60,
+    "mean_reward": 0.19729166666666667,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000060/manifest.json",
+    "manifest_sha256": "e509ada704480509466847c215482eba76bf28aa339604ce61a0fa88300249e1"
+  },
+  {
+    "step": 65,
+    "mean_reward": 0.24583333333333335,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000065/manifest.json",
+    "manifest_sha256": "37dd5103af1f87fa867b54ddeab24bbe7fe018e1bf66ba0ce019712035e55e4a"
+  },
+  {
+    "step": 70,
+    "mean_reward": 0.24520833333333333,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000070/manifest.json",
+    "manifest_sha256": "4d12c662aa48cff039194ec321983a7b6ba624ec67f3b59b2ca7502515c2d2e0"
+  },
+  {
+    "step": 75,
+    "mean_reward": 0.26145833333333335,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000075/manifest.json",
+    "manifest_sha256": "38b3f6afef983be47d808e76408ddf1b2ab99885f52650e7983949e9c506191e"
+  },
+  {
+    "step": 80,
+    "mean_reward": 0.29166666666666663,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000080/manifest.json",
+    "manifest_sha256": "68c886c445a893a1027f2e01d55c71230915c43c1d5c0224149b4c248ea5cd12"
+  },
+  {
+    "step": 85,
+    "mean_reward": 0.2677083333333333,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000085/manifest.json",
+    "manifest_sha256": "fa8a7d7fbffc9c3c52bb0f976894a8264d135d1f09e863a894f782b546d88469"
+  },
+  {
+    "step": 90,
+    "mean_reward": 0.26458333333333334,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000090/manifest.json",
+    "manifest_sha256": "593f747993efea87c99e839d7e8b129d8c808020403f83cdaeaa3338ebc21dd3"
+  },
+  {
+    "step": 95,
+    "mean_reward": 0.2875,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000095/manifest.json",
+    "manifest_sha256": "dbe3c5e17a398bd728d98d4e9de71c8fe369e322a822c1991b7a33381e5823ed"
+  },
+  {
+    "step": 100,
+    "mean_reward": 0.30104166666666665,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000100/manifest.json",
+    "manifest_sha256": "f0431ccf2d7c3622cc0e3b0362eeae5f1215f021dbc19277ef184dd86da3d774"
+  },
+  {
+    "step": 105,
+    "mean_reward": 0.305625,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000105/manifest.json",
+    "manifest_sha256": "e5199fd4f3b4b696c7857dd4680a2b909465e8996061e6ca2b7c90e9d0441058"
+  },
+  {
+    "step": 110,
+    "mean_reward": 0.31145833333333334,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000110/manifest.json",
+    "manifest_sha256": "7f2025ffde9d16dffb840b272ffed96b13aa152552f44fd1a2dbf93e9a64422d"
+  },
+  {
+    "step": 115,
+    "mean_reward": 0.27395833333333336,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000115/manifest.json",
+    "manifest_sha256": "672738ba349c57c41d54671a338a90774421b93791f763431f4d3513b6cb7b02"
+  },
+  {
+    "step": 120,
+    "mean_reward": 0.28958333333333336,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000120/manifest.json",
+    "manifest_sha256": "2492aecce17aa5b908aad4777f60682aeead09b3cda2e328c8b465424ae7bc4a"
+  },
+  {
+    "step": 125,
+    "mean_reward": 0.2833333333333333,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000125/manifest.json",
+    "manifest_sha256": "4b8e8fa8f24107471f6d39de3753d3946eda526a1bcd08d4ac31a2e43bd507fd"
+  },
+  {
+    "step": 130,
+    "mean_reward": 0.2875,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000130/manifest.json",
+    "manifest_sha256": "61e8d7f8e0fa93ff9c57fa5910dba132d8dd23449bee5607ba46854511e3431d"
+  },
+  {
+    "step": 135,
+    "mean_reward": 0.30625,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000135/manifest.json",
+    "manifest_sha256": "5614a047622a83f1486efeb9d76d72ba3d4cdcd4e8abfef3a8a37e2906dfd04d"
+  },
+  {
+    "step": 140,
+    "mean_reward": 0.3,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000140/manifest.json",
+    "manifest_sha256": "99fbeb486f64029fd01313afd04a885f85fb565484e734899323341cb7ec61fb"
+  },
+  {
+    "step": 145,
+    "mean_reward": 0.28020833333333334,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000145/manifest.json",
+    "manifest_sha256": "b43c78a06a731b93ad698f94f6433bfc7e9d7ab7bf76d4131d860a266d4ab5c0"
+  },
+  {
+    "step": 150,
+    "mean_reward": 0.32291666666666663,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000150/manifest.json",
+    "manifest_sha256": "7d37e9fe42442e8cc02424d90565cc1762846336736250b729bb5fbeb6681588"
+  },
+  {
+    "step": 155,
+    "mean_reward": 0.3104166666666667,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000155/manifest.json",
+    "manifest_sha256": "0e0a394f4943426516b922a2625951f960debc9002145e141adfb3638dd0af06"
+  },
+  {
+    "step": 160,
+    "mean_reward": 0.3125,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000160/manifest.json",
+    "manifest_sha256": "6b2aaa988ddb082f98d4252672af356bf9a1ab369b8dd47a4b35f27e8ac32921"
+  },
+  {
+    "step": 165,
+    "mean_reward": 0.278125,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000165/manifest.json",
+    "manifest_sha256": "03ac328c9c96f01594f889af4226cedb955c4190c3f46143b71a460f25dfcf6c"
+  },
+  {
+    "step": 170,
+    "mean_reward": 0.33541666666666664,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000170/manifest.json",
+    "manifest_sha256": "2b6b26db492847489424e3dfcbe854cf19480808efb65306310e6de5490381bd"
+  },
+  {
+    "step": 175,
+    "mean_reward": 0.33125,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000175/manifest.json",
+    "manifest_sha256": "3162ab9381b27f003abd381534fb5bb59a74d2f3264d8748c73bbb5f89cf2cbf"
+  },
+  {
+    "step": 180,
+    "mean_reward": 0.3104166666666667,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000180/manifest.json",
+    "manifest_sha256": "872e6ff0abb76a881ac455006e0104be3639126fdcd4de5bffa7a75969bb8be4"
+  },
+  {
+    "step": 185,
+    "mean_reward": 0.30625,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000185/manifest.json",
+    "manifest_sha256": "123b4494c948e5cefe613bf2e4a39e8449da5c4dc96b835bde363f3ef3992823"
+  },
+  {
+    "step": 190,
+    "mean_reward": 0.2625,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000190/manifest.json",
+    "manifest_sha256": "c14862330b7113aa7d8136b9927f8572b976606e2ff6568092a7381574c0a679"
+  },
+  {
+    "step": 195,
+    "mean_reward": 0.31666666666666665,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000195/manifest.json",
+    "manifest_sha256": "12cabf8b13e0322dfe3f13c3c8cf090e5b51c00ad82880a902c5a95b5c12c571"
+  },
+  {
+    "step": 200,
+    "mean_reward": 0.2625,
+    "manifest_uri": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/periodic_evals/step_000200/manifest.json",
+    "manifest_sha256": "7efbdfd6fecd1f372c6d765766cbe7a630b268fb536491114828cb77be6c2b1a"
+  }
+]

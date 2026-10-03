@@ -1,0 +1,742 @@
+{
+  "schema_version": 1,
+  "source": "Existing policy-step-5 and policy-step-200 periodic holdout rollouts; same task, repository commit and rollout index within each pair.",
+  "base_label": "Base (Early RL, step 5)",
+  "final_label": "Final RL (step 200)",
+  "cost_scenario": {
+    "input_usd_per_million": 0.039,
+    "output_plus_reasoning_usd_per_million": 0.18,
+    "cache_assumption": "All input uncached; no verified cache discount.",
+    "boundary": "Detector generation tokens only; excludes checker, infrastructure, training and billed provider costs.",
+    "label": "Illustrative OpenRouter price scenario, not actual spend."
+  },
+  "tasks": {
+    "openfire": {
+      "key": "openfire",
+      "name": "Openfire",
+      "task_id": "CVE-2019-18394",
+      "kind": "miss_to_match",
+      "risk": "A chat server fetches website icons. A flaw could make that server contact systems it was not meant to reach.",
+      "headline": "The final run identified the risky icon fetch.",
+      "summary": "Both runs read the icon-fetching and settings code. Early RL reported a different XML problem. Final RL reported the icon-fetching risk, and the checker matched that report to the known bug.",
+      "runs": {
+        "base": {
+          "label": "Base (Early RL, step 5)",
+          "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155",
+          "policy_step": 5,
+          "rollout_index": 0,
+          "proposal_count": 1.0,
+          "known_bug_matched": false,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 154527,
+            "output": 3612,
+            "reasoning": 1400,
+            "total": 159539
+          },
+          "estimated_detector_cost_usd": 0.006929,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "openfire-base.json",
+          "report_source": {
+            "observation_id": "390c14db8c81f571",
+            "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=390c14db8c81f571",
+            "output_sha256": "1dabb0bdd5504497b4808c4da1f6a3b27ce9de1b44f050ac6c3c7005df181e74",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "758176b526ba070a",
+            "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=758176b526ba070a",
+            "output_sha256": "b2c99ba35f9907ebd5a649399f879328a1cb2d369c16827d6643bcc0ae0f01ce",
+            "state": "verified"
+          }
+        },
+        "final": {
+          "label": "Final RL (step 200)",
+          "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67",
+          "policy_step": 200,
+          "rollout_index": 0,
+          "proposal_count": 3.0,
+          "known_bug_matched": true,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 689589,
+            "output": 14488,
+            "reasoning": 9438,
+            "total": 713515
+          },
+          "estimated_detector_cost_usd": 0.031201,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "openfire-final.json",
+          "report_source": {
+            "observation_id": "58e77b20d73864bb",
+            "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=58e77b20d73864bb",
+            "output_sha256": "7d4565b9dee12f3240bf5f611581508c9979c775d539316a11f883a950d95dbb",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "7b2d4f6c784eabe8",
+            "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=7b2d4f6c784eabe8",
+            "output_sha256": "51f53d62f634ccd1ca2c009fbd3c03539ce33fd0a061f158324d08a029627669",
+            "state": "verified"
+          }
+        }
+      },
+      "stages": [
+        {
+          "phase": "Read the code",
+          "base": {
+            "title": "Read the icon and settings code",
+            "detail": "Fetches website icons; Reads saved XML settings.",
+            "files": [
+              {
+                "file": "xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java",
+                "description": "Fetches website icons",
+                "observation_id": "2158f2090b42cab8",
+                "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=2158f2090b42cab8",
+                "output_sha256": "bea798f87b6a5ae22e8ae9538c2544c66156e3dda593bd9186af9882dbbcb61f",
+                "state": "verified",
+                "code_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java"
+              },
+              {
+                "file": "xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java",
+                "description": "Reads saved XML settings",
+                "observation_id": "c33ae374e605e6d9",
+                "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=c33ae374e605e6d9",
+                "output_sha256": "bd6fc2be782931f07e2945832ceea246baac4279d01d60e0807316ed8cf60944",
+                "state": "verified",
+                "code_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=2158f2090b42cab8"
+          },
+          "final": {
+            "title": "Read the icon and settings code",
+            "detail": "Fetches website icons; Reads saved XML settings.",
+            "files": [
+              {
+                "file": "xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java",
+                "description": "Fetches website icons",
+                "observation_id": "cc88084c8a61e672",
+                "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=cc88084c8a61e672",
+                "output_sha256": "bea798f87b6a5ae22e8ae9538c2544c66156e3dda593bd9186af9882dbbcb61f",
+                "state": "verified",
+                "code_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java"
+              },
+              {
+                "file": "xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java",
+                "description": "Reads saved XML settings",
+                "observation_id": "3a36cf6701ea31a7",
+                "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=3a36cf6701ea31a7",
+                "output_sha256": "96372354d1f6b8fd68313d0621ead362366eb59ad457cd4d72be33c11357990a",
+                "state": "verified",
+                "code_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=cc88084c8a61e672"
+          }
+        },
+        {
+          "phase": "Report a problem",
+          "base": {
+            "title": "Reported 1 possible issue",
+            "detail": "Reported one XML-file problem, which did not match the known target.",
+            "observation_id": "390c14db8c81f571",
+            "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=390c14db8c81f571",
+            "output_sha256": "1dabb0bdd5504497b4808c4da1f6a3b27ce9de1b44f050ac6c3c7005df181e74",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Reported 3 possible issues",
+            "detail": "Reported three possible issues, including the risky icon fetch.",
+            "observation_id": "58e77b20d73864bb",
+            "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=58e77b20d73864bb",
+            "output_sha256": "7d4565b9dee12f3240bf5f611581508c9979c775d539316a11f883a950d95dbb",
+            "state": "verified"
+          }
+        },
+        {
+          "phase": "Check the report",
+          "base": {
+            "title": "Known bug missed",
+            "detail": "The checker rejected the XML finding as unrelated to the known bug.",
+            "observation_id": "758176b526ba070a",
+            "trace_id": "85cfcd1ab77f6b524fa8da1eff68e155",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/85cfcd1ab77f6b524fa8da1eff68e155?observation=758176b526ba070a",
+            "output_sha256": "b2c99ba35f9907ebd5a649399f879328a1cb2d369c16827d6643bcc0ae0f01ce",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Known bug matched",
+            "detail": "The checker credited the icon-fetching finding for matching the known bug.",
+            "observation_id": "7b2d4f6c784eabe8",
+            "trace_id": "7c81b594c24ce3b43ce33577bf7adc67",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/7c81b594c24ce3b43ce33577bf7adc67?observation=7b2d4f6c784eabe8",
+            "output_sha256": "51f53d62f634ccd1ca2c009fbd3c03539ce33fd0a061f158324d08a029627669",
+            "state": "verified"
+          }
+        }
+      ],
+      "detector_token_change_percent": 347.2,
+      "repository": "igniterealtime/Openfire",
+      "repository_commit": "83f653f8d0601ff3667e1c5cf3ac18834f0d4a24"
+    },
+    "cosmos": {
+      "key": "cosmos",
+      "name": "OpenC3 COSMOS",
+      "task_id": "CVE-2025-68271",
+      "kind": "miss_to_match",
+      "risk": "Software that sends commands to connected systems. A flaw in converting text could let input become instructions that run on the server.",
+      "headline": "The final run found the dangerous text conversion.",
+      "summary": "Both runs inspected text conversion and related data-handling code. Early RL reported other problems. Final RL identified text being treated as instructions, and the checker matched the known bug.",
+      "runs": {
+        "base": {
+          "label": "Base (Early RL, step 5)",
+          "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2",
+          "policy_step": 5,
+          "rollout_index": 0,
+          "proposal_count": 4.0,
+          "known_bug_matched": false,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 3383423,
+            "output": 30420,
+            "reasoning": 11670,
+            "total": 3425513
+          },
+          "estimated_detector_cost_usd": 0.13953,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "cosmos-base.json",
+          "report_source": {
+            "observation_id": "a4d3d30bcd3cdf48",
+            "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=a4d3d30bcd3cdf48",
+            "output_sha256": "e77602b4137d4b91294180169b846d46fb0d5c6cff2c70faff9615307ee70023",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "fba4df1216c0f323",
+            "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=fba4df1216c0f323",
+            "output_sha256": "2da89a8b6c6ee8001131c4e37809827974eaafa398506ef4605ffce6a63c596c",
+            "state": "verified"
+          }
+        },
+        "final": {
+          "label": "Final RL (step 200)",
+          "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00",
+          "policy_step": 200,
+          "rollout_index": 0,
+          "proposal_count": 4.0,
+          "known_bug_matched": true,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 1259253,
+            "output": 15257,
+            "reasoning": 6980,
+            "total": 1281490
+          },
+          "estimated_detector_cost_usd": 0.053114,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "cosmos-final.json",
+          "report_source": {
+            "observation_id": "1d9d2d347d9764fe",
+            "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=1d9d2d347d9764fe",
+            "output_sha256": "6c2aec6e1632616c8397b8b91f7c628ac5fbf746f8294de45494a7f19db82475",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "28a13637faa09f26",
+            "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=28a13637faa09f26",
+            "output_sha256": "2cadd9b147cdaac2ef6e5ea8bde2dae9eeab19f2605e3e6dd90465647d422821",
+            "state": "verified"
+          }
+        }
+      },
+      "stages": [
+        {
+          "phase": "Read the code",
+          "base": {
+            "title": "Read text and data-conversion code",
+            "detail": "Converts incoming text into values; Converts values while reading data.",
+            "files": [
+              {
+                "file": "openc3/lib/openc3/core_ext/string.rb",
+                "description": "Converts incoming text into values",
+                "observation_id": "fc0443ad9c0dcf4b",
+                "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=fc0443ad9c0dcf4b",
+                "output_sha256": "28ffd6a0196efac1ca031b295a2f2e420c33ee9783780c1b0de2e973bd861d92",
+                "state": "verified",
+                "code_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/core_ext/string.rb"
+              },
+              {
+                "file": "openc3/lib/openc3/conversions/object_read_conversion.rb",
+                "description": "Converts values while reading data",
+                "observation_id": "8f40bc3e84931ecb",
+                "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=8f40bc3e84931ecb",
+                "output_sha256": "6c28c9e58e25f43b86501a0d518cb88a60d742dbc96741f7348bb2703cf9065a",
+                "state": "verified",
+                "code_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/conversions/object_read_conversion.rb"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=fc0443ad9c0dcf4b"
+          },
+          "final": {
+            "title": "Read text and data-conversion code",
+            "detail": "Converts incoming text into values; Converts values while reading data.",
+            "files": [
+              {
+                "file": "openc3/lib/openc3/core_ext/string.rb",
+                "description": "Converts incoming text into values",
+                "observation_id": "5c9f41d317416323",
+                "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=5c9f41d317416323",
+                "output_sha256": "28ffd6a0196efac1ca031b295a2f2e420c33ee9783780c1b0de2e973bd861d92",
+                "state": "verified",
+                "code_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/core_ext/string.rb"
+              },
+              {
+                "file": "openc3/lib/openc3/conversions/object_read_conversion.rb",
+                "description": "Converts values while reading data",
+                "observation_id": "f65b956c0e3117f8",
+                "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=f65b956c0e3117f8",
+                "output_sha256": "6c28c9e58e25f43b86501a0d518cb88a60d742dbc96741f7348bb2703cf9065a",
+                "state": "verified",
+                "code_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/conversions/object_read_conversion.rb"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=5c9f41d317416323"
+          }
+        },
+        {
+          "phase": "Report a problem",
+          "base": {
+            "title": "Reported 4 possible issues",
+            "detail": "Reported four possible issues in other data-handling and Windows code.",
+            "observation_id": "a4d3d30bcd3cdf48",
+            "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=a4d3d30bcd3cdf48",
+            "output_sha256": "e77602b4137d4b91294180169b846d46fb0d5c6cff2c70faff9615307ee70023",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Reported 4 possible issues",
+            "detail": "Reported four possible issues, including unsafe text conversion.",
+            "observation_id": "1d9d2d347d9764fe",
+            "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=1d9d2d347d9764fe",
+            "output_sha256": "6c2aec6e1632616c8397b8b91f7c628ac5fbf746f8294de45494a7f19db82475",
+            "state": "verified"
+          }
+        },
+        {
+          "phase": "Check the report",
+          "base": {
+            "title": "Known bug missed",
+            "detail": "None of the four proposals matched the known bug.",
+            "observation_id": "fba4df1216c0f323",
+            "trace_id": "cf95bdb5573610d76f66dddacda58ac2",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cf95bdb5573610d76f66dddacda58ac2?observation=fba4df1216c0f323",
+            "output_sha256": "2da89a8b6c6ee8001131c4e37809827974eaafa398506ef4605ffce6a63c596c",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Known bug matched",
+            "detail": "The checker credited the text-conversion finding. The other proposals were not four confirmed bugs.",
+            "observation_id": "28a13637faa09f26",
+            "trace_id": "b4703bc97f8cb3e5d9b6f197eb3d3a00",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/b4703bc97f8cb3e5d9b6f197eb3d3a00?observation=28a13637faa09f26",
+            "output_sha256": "2cadd9b147cdaac2ef6e5ea8bde2dae9eeab19f2605e3e6dd90465647d422821",
+            "state": "verified"
+          }
+        }
+      ],
+      "detector_token_change_percent": -62.6,
+      "repository": "OpenC3/cosmos",
+      "repository_commit": "24ca2102180a28d9bb83a7251497865b50e0cc55"
+    },
+    "setvalue": {
+      "key": "setvalue",
+      "name": "set-value",
+      "task_id": "CVE-2019-10747",
+      "kind": "same_match_fewer_tokens",
+      "risk": "A JavaScript helper updates nested settings. A flaw could let untrusted input change shared object settings and affect other code.",
+      "headline": "Same known bug matched, with 88% fewer tokens.",
+      "summary": "Both runs read the settings helper and its tests. Early RL proposed six issues. Final RL returned one focused report, and both reports matched the known bug.",
+      "runs": {
+        "base": {
+          "label": "Base (Early RL, step 5)",
+          "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41",
+          "policy_step": 5,
+          "rollout_index": 0,
+          "proposal_count": 6.0,
+          "known_bug_matched": true,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 333095,
+            "output": 23915,
+            "reasoning": 16244,
+            "total": 373254
+          },
+          "estimated_detector_cost_usd": 0.020219,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "setvalue-base.json",
+          "report_source": {
+            "observation_id": "bdbad49fc9817650",
+            "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=bdbad49fc9817650",
+            "output_sha256": "d4976c16346cff5684d65153cf7a271d9e8f8a8ad1804c6a0792fd763704d4f9",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "bd592d178523c18b",
+            "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=bd592d178523c18b",
+            "output_sha256": "508d976db797e985a0a85def79aaa10e90804443dff54342fc99f5fa45d00f34",
+            "state": "verified"
+          }
+        },
+        "final": {
+          "label": "Final RL (step 200)",
+          "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33",
+          "policy_step": 200,
+          "rollout_index": 0,
+          "proposal_count": 1.0,
+          "known_bug_matched": true,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 38287,
+            "output": 3789,
+            "reasoning": 2205,
+            "total": 44281
+          },
+          "estimated_detector_cost_usd": 0.002572,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "setvalue-final.json",
+          "report_source": {
+            "observation_id": "e9b2eea6ab5b8d2a",
+            "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=e9b2eea6ab5b8d2a",
+            "output_sha256": "114cb20715014788411ce6c1b3de52f3997dd10a39f63f81f00d5c3c1dae971a",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "fc3a9bda520cd8d7",
+            "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=fc3a9bda520cd8d7",
+            "output_sha256": "9b5633ed78cd3b210c1b81009ddde9406dfb002c3a4a12c65b3965e05b03c5cc",
+            "state": "verified"
+          }
+        }
+      },
+      "stages": [
+        {
+          "phase": "Read the code",
+          "base": {
+            "title": "Read the settings helper and tests",
+            "detail": "Updates nested object settings; Tests the settings helper.",
+            "files": [
+              {
+                "file": "index.js",
+                "description": "Updates nested object settings",
+                "observation_id": "188ddbc69c6b8f1b",
+                "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=188ddbc69c6b8f1b",
+                "output_sha256": "b9f5022f41ebda2cf92b3cb1bd19ef1358972b18f8d81b3432c51145f24c3a79",
+                "state": "verified",
+                "code_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/index.js"
+              },
+              {
+                "file": "test.js",
+                "description": "Tests the settings helper",
+                "observation_id": "0caeafc00b418668",
+                "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=0caeafc00b418668",
+                "output_sha256": "ea2bc65bbe0180173be5681d5bc215ec39f1db9642fa7ece55d2cdfb708681ca",
+                "state": "verified",
+                "code_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/test.js"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=188ddbc69c6b8f1b"
+          },
+          "final": {
+            "title": "Read the settings helper and tests",
+            "detail": "Updates nested object settings; Tests the settings helper.",
+            "files": [
+              {
+                "file": "index.js",
+                "description": "Updates nested object settings",
+                "observation_id": "a4e6606d27c00af9",
+                "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=a4e6606d27c00af9",
+                "output_sha256": "b9f5022f41ebda2cf92b3cb1bd19ef1358972b18f8d81b3432c51145f24c3a79",
+                "state": "verified",
+                "code_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/index.js"
+              },
+              {
+                "file": "test.js",
+                "description": "Tests the settings helper",
+                "observation_id": "0b622506d0765883",
+                "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=0b622506d0765883",
+                "output_sha256": "ea2bc65bbe0180173be5681d5bc215ec39f1db9642fa7ece55d2cdfb708681ca",
+                "state": "verified",
+                "code_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/test.js"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=a4e6606d27c00af9"
+          }
+        },
+        {
+          "phase": "Report a problem",
+          "base": {
+            "title": "Reported 6 possible issues",
+            "detail": "Reported six possible issues, including unsafe changes to shared settings.",
+            "observation_id": "bdbad49fc9817650",
+            "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=bdbad49fc9817650",
+            "output_sha256": "d4976c16346cff5684d65153cf7a271d9e8f8a8ad1804c6a0792fd763704d4f9",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Reported 1 possible issue",
+            "detail": "Reported one issue about unsafe changes to shared settings.",
+            "observation_id": "e9b2eea6ab5b8d2a",
+            "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=e9b2eea6ab5b8d2a",
+            "output_sha256": "114cb20715014788411ce6c1b3de52f3997dd10a39f63f81f00d5c3c1dae971a",
+            "state": "verified"
+          }
+        },
+        {
+          "phase": "Check the report",
+          "base": {
+            "title": "Known bug matched",
+            "detail": "The checker credited the shared-settings finding.",
+            "observation_id": "bd592d178523c18b",
+            "trace_id": "cd26d9a962a484fda6eb78b63338cb41",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd26d9a962a484fda6eb78b63338cb41?observation=bd592d178523c18b",
+            "output_sha256": "508d976db797e985a0a85def79aaa10e90804443dff54342fc99f5fa45d00f34",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Known bug matched",
+            "detail": "The checker credited the same known bug.",
+            "observation_id": "fc3a9bda520cd8d7",
+            "trace_id": "2ae51db681fefdf51fa3c6bbca6f5d33",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/2ae51db681fefdf51fa3c6bbca6f5d33?observation=fc3a9bda520cd8d7",
+            "output_sha256": "9b5633ed78cd3b210c1b81009ddde9406dfb002c3a4a12c65b3965e05b03c5cc",
+            "state": "verified"
+          }
+        }
+      ],
+      "detector_token_change_percent": -88.1,
+      "repository": "jonschlinkert/set-value",
+      "repository_commit": "7bd5011d82e583305a191a9a062abfe177ec29ad"
+    },
+    "jenkins": {
+      "key": "jenkins",
+      "name": "Jenkins",
+      "task_id": "CVE-2015-8103",
+      "kind": "regression_counterexample",
+      "appendix": true,
+      "risk": "A server that runs software builds. A flaw in reading untrusted data could let that data trigger program execution on the server.",
+      "headline": "The final report missed a target that Early RL matched.",
+      "summary": "Both runs read the command-line connection code. Early RL described the known unsafe data-reading bug. Final RL described a related problem with the wrong data direction, and the checker rejected the match.",
+      "runs": {
+        "base": {
+          "label": "Base (Early RL, step 5)",
+          "trace_id": "baca55768967b765d6824c7168d8a6f7",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7",
+          "policy_step": 5,
+          "rollout_index": 1,
+          "proposal_count": 6.0,
+          "known_bug_matched": true,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 373661,
+            "output": 14478,
+            "reasoning": 4896,
+            "total": 393035
+          },
+          "estimated_detector_cost_usd": 0.01806,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "jenkins-base.json",
+          "report_source": {
+            "observation_id": "501630f073e70416",
+            "trace_id": "baca55768967b765d6824c7168d8a6f7",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=501630f073e70416",
+            "output_sha256": "99d5b4e0a99a090ad72349e45ab3270abe05077e886cd96b74af8ff8ebe5b4ca",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "b4c206cfd067ce51",
+            "trace_id": "baca55768967b765d6824c7168d8a6f7",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b4c206cfd067ce51",
+            "output_sha256": "05b7174420e03861961df96d9119adf20b49e1bed80a7f81d658e4b78d1b4488",
+            "state": "verified"
+          }
+        },
+        "final": {
+          "label": "Final RL (step 200)",
+          "trace_id": "cd08048b04db793a96d5ab19789f2718",
+          "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718",
+          "policy_step": 200,
+          "rollout_index": 1,
+          "proposal_count": 3.0,
+          "known_bug_matched": false,
+          "terminal_valid": true,
+          "tokens": {
+            "input": 435520,
+            "output": 8543,
+            "reasoning": 4423,
+            "total": 448486
+          },
+          "estimated_detector_cost_usd": 0.019319,
+          "cost_label": "Uncached illustrative OpenRouter scenario",
+          "json_file": "jenkins-final.json",
+          "report_source": {
+            "observation_id": "496e0766a4a7ed31",
+            "trace_id": "cd08048b04db793a96d5ab19789f2718",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=496e0766a4a7ed31",
+            "output_sha256": "a3ab0b13f7682284094b557083e1abf1d392decef98b03d79bb2123861aa5f4a",
+            "state": "verified"
+          },
+          "judge_source": {
+            "observation_id": "f93506565065f55d",
+            "trace_id": "cd08048b04db793a96d5ab19789f2718",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=f93506565065f55d",
+            "output_sha256": "c0412cc61e49bfc492c7a8c15658bd7d862daa905270b088ba1baea26a329920",
+            "state": "verified"
+          }
+        }
+      },
+      "stages": [
+        {
+          "phase": "Read the code",
+          "base": {
+            "title": "Read the connection and command-line code",
+            "detail": "Reads data arriving through a connection; Handles command-line connections.",
+            "files": [
+              {
+                "file": "cli/src/main/java/hudson/cli/Connection.java",
+                "description": "Reads data arriving through a connection",
+                "observation_id": "e429dcceca1bf4d2",
+                "trace_id": "baca55768967b765d6824c7168d8a6f7",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e429dcceca1bf4d2",
+                "output_sha256": "f685bf603bfa35d8824f55a8b77e447a407f8c121f63465aea003b8a9598be73",
+                "state": "verified"
+              },
+              {
+                "file": "cli/src/main/java/hudson/cli/CLI.java",
+                "description": "Handles command-line connections",
+                "observation_id": "b113cb91921ba035",
+                "trace_id": "baca55768967b765d6824c7168d8a6f7",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b113cb91921ba035",
+                "output_sha256": "46f73445d9fb7b49e30d3810fc9534054969f4d80e82303e830c7584fc7142a6",
+                "state": "verified"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e429dcceca1bf4d2"
+          },
+          "final": {
+            "title": "Read the connection and command-line code",
+            "detail": "Reads data arriving through a connection; Handles command-line connections.",
+            "files": [
+              {
+                "file": "cli/src/main/java/hudson/cli/Connection.java",
+                "description": "Reads data arriving through a connection",
+                "observation_id": "e6fa088f1ba5db51",
+                "trace_id": "cd08048b04db793a96d5ab19789f2718",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=e6fa088f1ba5db51",
+                "output_sha256": "f685bf603bfa35d8824f55a8b77e447a407f8c121f63465aea003b8a9598be73",
+                "state": "verified"
+              },
+              {
+                "file": "cli/src/main/java/hudson/cli/CLI.java",
+                "description": "Handles command-line connections",
+                "observation_id": "9e182d87160a3095",
+                "trace_id": "cd08048b04db793a96d5ab19789f2718",
+                "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=9e182d87160a3095",
+                "output_sha256": "46f73445d9fb7b49e30d3810fc9534054969f4d80e82303e830c7584fc7142a6",
+                "state": "verified"
+              }
+            ],
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=e6fa088f1ba5db51"
+          }
+        },
+        {
+          "phase": "Report a problem",
+          "base": {
+            "title": "Reported 6 possible issues",
+            "detail": "Reported six possible issues, including the unsafe data-reading bug.",
+            "observation_id": "501630f073e70416",
+            "trace_id": "baca55768967b765d6824c7168d8a6f7",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=501630f073e70416",
+            "output_sha256": "99d5b4e0a99a090ad72349e45ab3270abe05077e886cd96b74af8ff8ebe5b4ca",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Reported 3 possible issues",
+            "detail": "Reported three possible issues, with a related data-reading claim.",
+            "observation_id": "496e0766a4a7ed31",
+            "trace_id": "cd08048b04db793a96d5ab19789f2718",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=496e0766a4a7ed31",
+            "output_sha256": "a3ab0b13f7682284094b557083e1abf1d392decef98b03d79bb2123861aa5f4a",
+            "state": "verified"
+          }
+        },
+        {
+          "phase": "Check the report",
+          "base": {
+            "title": "Known bug matched",
+            "detail": "The checker credited the unsafe data-reading finding.",
+            "observation_id": "b4c206cfd067ce51",
+            "trace_id": "baca55768967b765d6824c7168d8a6f7",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b4c206cfd067ce51",
+            "output_sha256": "05b7174420e03861961df96d9119adf20b49e1bed80a7f81d658e4b78d1b4488",
+            "state": "verified"
+          },
+          "final": {
+            "title": "Known bug missed",
+            "detail": "The checker rejected the claim because it described the wrong direction of the incoming data.",
+            "observation_id": "f93506565065f55d",
+            "trace_id": "cd08048b04db793a96d5ab19789f2718",
+            "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/cd08048b04db793a96d5ab19789f2718?observation=f93506565065f55d",
+            "output_sha256": "c0412cc61e49bfc492c7a8c15658bd7d862daa905270b088ba1baea26a329920",
+            "state": "verified"
+          }
+        }
+      ],
+      "detector_token_change_percent": 14.1,
+      "repository": "jenkinsci/jenkins",
+      "repository_commit": "ed407e66bcd3743a3b458ea8284977e5cac56c2a"
+    }
+  },
+  "limits": [
+    "Early RL step 5 is already trained, not an untouched model.",
+    "Each selected trace is one illustrative completed rollout from four per task; it does not replace the full holdout result.",
+    "The periodic artifacts identify policy step 200. Exact identity with the saved final checkpoint URI requires separate checkpoint lineage verification.",
+    "The checker awards a known-bug match; it does not independently reproduce every proposal."
+  ]
+}

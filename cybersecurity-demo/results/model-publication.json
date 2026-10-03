@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "repo_id": "depthfirstlabs/Nemotron-3.5-Lightning-RL-NVD-Final-Step-200",
+  "url": "https://huggingface.co/depthfirstlabs/Nemotron-3.5-Lightning-RL-NVD-Final-Step-200",
+  "checkpoint_uri": "tinker://7d09737f-5aec-521d-af89-25b2f7004801:train:0/sampler_weights/final",
+  "training_updates": 200,
+  "training_base_revision": null,
+  "export_base_metadata_revision": "a9904d24bcc1d289a1950fa9d2b978c47cf903b9",
+  "inference_tested": false,
+  "state": "published_manual_gate_verified",
+  "publisher_identity": "rpotham",
+  "license_upstream_sha256": "d7c8a9e5d1896d0a9588319cc7b1433e64645ad6d9e55632c30b78d8c038c23b",
+  "private": false,
+  "gated": "manual",
+  "updated_at": "2026-10-03T00:01:04.012972+00:00",
+  "commit_sha": "36cfacac1b5937ed15c6a71e723f9c51fbaa35db",
+  "commit_url": "https://huggingface.co/depthfirstlabs/Nemotron-3.5-Lightning-RL-NVD-Final-Step-200/commit/36cfacac1b5937ed15c6a71e723f9c51fbaa35db",
+  "remote_weights_bytes": 3592633424,
+  "remote_weights_sha256": "55e5cb9f6dfb6a72d67eed7d0a4b79560bf0dc59a4d3041c8a2a1bd4d59bf23e",
+  "remote_metadata_checks": {
+    "adapter_config.json": {
+      "sha256": "026755b5636e4ecf72885198fd27c9a782a2716f7140518e4a6ec5a53f1ed8c8",
+      "size_bytes": 646,
+      "verified_exact_bytes": true
+    },
+    "README.md": {
+      "sha256": "aaefa831e56b3c7809f62669f3ea774fc700131ab32251ce19401fa7e16e83b2",
+      "size_bytes": 5010,
+      "verified_exact_bytes": true
+    },
+    "LICENSE": {
+      "sha256": "d7c8a9e5d1896d0a9588319cc7b1433e64645ad6d9e55632c30b78d8c038c23b",
+      "size_bytes": 2693,
+      "verified_exact_bytes": true
+    },
+    "NOTICE": {
+      "sha256": "58e4e8c5ad20e2b46afa7d22237dc18f96a4d5a022fd268570faf0cc2ee2b969",
+      "size_bytes": 534,
+      "verified_exact_bytes": true
+    },
+    "export-manifest.json": {
+      "sha256": "fb74bc58ad1229afd4d69da5bd4e8b20a11db34aff9aa4b01b8d113335d1819f",
+      "size_bytes": 3463,
+      "verified_exact_bytes": true
+    }
+  },
+  "anonymous_file_checks": [
+    {
+      "file": "adapter_config.json",
+      "status": 401,
+      "error_code": "GatedRepo"
+    },
+    {
+      "file": "adapter_model.safetensors",
+      "status": 401,
+      "error_code": "GatedRepo"
+    }
+  ],
+  "public_model_card_http_status": 200
+}

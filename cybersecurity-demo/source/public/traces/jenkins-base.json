@@ -1,0 +1,2467 @@
+{
+  "schema": "depthfirst.rl-sanitized-chronological-trace.v1",
+  "task_name": "Jenkins",
+  "task_id": "CVE-2015-8103",
+  "run_label": "Base (Early RL, step 5)",
+  "trainer_job_id": "nemotron-nvd-baseline-async_20261001_215436_92c745",
+  "trace_id": "baca55768967b765d6824c7168d8a6f7",
+  "trace_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7",
+  "repository": "jenkinsci/jenkins",
+  "repository_commit": "ed407e66bcd3743a3b458ea8284977e5cac56c2a",
+  "policy_step": 5,
+  "rollout_index": 1,
+  "plain_summary": "Both runs read the command-line connection code. Early RL described the known unsafe data-reading bug. Final RL described a related problem with the wrong data direction, and the checker rejected the match.",
+  "software_and_risk": "A server that runs software builds. A flaw in reading untrusted data could let that data trigger program execution on the server.",
+  "submitted_report_summary": "Reported six possible issues, including the unsafe data-reading bug.",
+  "known_bug_checker_summary": "The checker credited the unsafe data-reading finding.",
+  "known_bug_matched": true,
+  "proposal_count": 6.0,
+  "terminal_validity": {
+    "failure_type": null,
+    "error": null,
+    "discarded": false,
+    "known_bug_target_count": 1,
+    "judged_result": "pass",
+    "note": "Valid completed quality result. A missed target is not a pipeline exception."
+  },
+  "tokens": {
+    "input": 373661,
+    "output": 14478,
+    "reasoning": 4896,
+    "total": 393035
+  },
+  "cost_scenario": {
+    "estimated_detector_cost_usd": 0.01806,
+    "input_usd_per_million": 0.039,
+    "output_plus_reasoning_usd_per_million": 0.18,
+    "cache_assumption": "All input uncached; no verified cache discount.",
+    "boundary": "Detector generation tokens only; excludes checker, infrastructure, training and billed provider costs.",
+    "label": "Illustrative OpenRouter price scenario, not actual spend."
+  },
+  "code_files_read": [
+    {
+      "file": "cli/src/main/java/hudson/cli/Connection.java",
+      "description": "Reads data arriving through a connection",
+      "observation_id": "e429dcceca1bf4d2",
+      "trace_id": "baca55768967b765d6824c7168d8a6f7",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e429dcceca1bf4d2",
+      "output_sha256": "f685bf603bfa35d8824f55a8b77e447a407f8c121f63465aea003b8a9598be73",
+      "state": "verified"
+    },
+    {
+      "file": "cli/src/main/java/hudson/cli/CLI.java",
+      "description": "Handles command-line connections",
+      "observation_id": "b113cb91921ba035",
+      "trace_id": "baca55768967b765d6824c7168d8a6f7",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b113cb91921ba035",
+      "output_sha256": "46f73445d9fb7b49e30d3810fc9534054969f4d80e82303e830c7584fc7142a6",
+      "state": "verified"
+    }
+  ],
+  "export_notice": "Sanitized chronological reconstruction from existing Langfuse events and S3 rollout metadata. Not a verbatim full provider transcript. Actual benign excerpts and safe summaries are labeled separately.",
+  "source_native_artifact": "s3://patcherai-prod-runs/rl_training/observability/nemotron-nvd-baseline-async_20261001_215436_92c745/traces/periodic_evals/step_000005_traces.json",
+  "source_langfuse_cache_sha256": "d15d7a9aef0ca1fa9405981f560a1d1b45a5ec43c2117947ff60bb32b0558881",
+  "event_count": 77,
+  "events": [
+    {
+      "sequence": 1,
+      "observation_id": "53bd7ed91a818378",
+      "parent_observation_id": null,
+      "child_observation_ids": [
+        "614608c7c80dca66",
+        "4eebbdc3104e9c16",
+        "f29c0080cfa78cff",
+        "bbf280894bbb44b2",
+        "a49f3ba957a7b310",
+        "5e42669eb76e0767",
+        "e5d67f22ecdcfd98",
+        "7d57a6bf6e81f9bc",
+        "68c1a3d1f48dc32c",
+        "7bf76303c2675711",
+        "ed3a2bc64953a4c9",
+        "be0fb34ca15b7d9e"
+      ],
+      "started_at_utc": "2026-10-01 22:27:43.576",
+      "ended_at_utc": "2026-10-01 22:29:49.413",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=53bd7ed91a818378",
+      "original_cached_output_sha256": "03c4e5fa7b7d3fcddc06fa8e0e62a2d4d9adcfe7b2da9163483289442e6a04e7",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Run setup or completion",
+      "decision_summary": {
+        "text": "Run setup or completion recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 2,
+      "observation_id": "614608c7c80dca66",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:43.620",
+      "ended_at_utc": "2026-10-01 22:27:43.807",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=614608c7c80dca66",
+      "original_cached_output_sha256": "e76fcd84e02da1fea1e4230b778e26e8c99b9b1a43024c445700ad3b2a8d1385",
+      "original_cached_input_sha256": "862a9c295ccd39abf144098c7d49cc4a89cad58bdaa7c02642b52855bda4bd00",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 3,
+      "observation_id": "4eebbdc3104e9c16",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:44.037",
+      "ended_at_utc": "2026-10-01 22:27:44.728",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=4eebbdc3104e9c16",
+      "original_cached_output_sha256": "e76fcd84e02da1fea1e4230b778e26e8c99b9b1a43024c445700ad3b2a8d1385",
+      "original_cached_input_sha256": "c78b19600b996e8a1d5b03c3ff4977fd77b5852ee5d9a91cec570652dfe3efb5",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 4,
+      "observation_id": "f29c0080cfa78cff",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:44.728",
+      "ended_at_utc": "2026-10-01 22:27:44.911",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=f29c0080cfa78cff",
+      "original_cached_output_sha256": "e76fcd84e02da1fea1e4230b778e26e8c99b9b1a43024c445700ad3b2a8d1385",
+      "original_cached_input_sha256": "c78b19600b996e8a1d5b03c3ff4977fd77b5852ee5d9a91cec570652dfe3efb5",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 5,
+      "observation_id": "bbf280894bbb44b2",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:44.912",
+      "ended_at_utc": "2026-10-01 22:27:45.116",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=bbf280894bbb44b2",
+      "original_cached_output_sha256": "26c44b061d3be30d6c2e406ebb3023f433f6714eab4c7fe6d7f7473d672e998d",
+      "original_cached_input_sha256": "0a26a265844fdaab2280445c2fb13739328e35fd2d5e314c361ca75e237352e5",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 6,
+      "observation_id": "a49f3ba957a7b310",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:45.117",
+      "ended_at_utc": "2026-10-01 22:27:45.313",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=a49f3ba957a7b310",
+      "original_cached_output_sha256": "e4a77bdee3027243f8816f4c063078ca244bd0c1219e8303152e6bee14217d9f",
+      "original_cached_input_sha256": "03b665f3a0ee79ccac0dedbb3b9ab92f1eb80512f74751491de66095c407f764",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 2,
+      "decision_summary": {
+        "text": "Tool returned a nonzero status.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 7,
+      "observation_id": "5e42669eb76e0767",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:45.313",
+      "ended_at_utc": "2026-10-01 22:27:45.570",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=5e42669eb76e0767",
+      "original_cached_output_sha256": "882a5f4259ae790203628b94a1105bc56c5dd20d6f0df2d7055d2ac8634fea85",
+      "original_cached_input_sha256": "d47bf86d2cab559f6578df153d3d806a1ef282557fcd6fdaa7fe26d3186b32b7",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 8,
+      "observation_id": "e5d67f22ecdcfd98",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:45.571",
+      "ended_at_utc": "2026-10-01 22:27:45.810",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e5d67f22ecdcfd98",
+      "original_cached_output_sha256": "b3e10eef3775b263f947af5ad1ba1b76a44ee4277f4cf8060d44ebcbd0096757",
+      "original_cached_input_sha256": "4cd9772631d18733dc5a480e5987831bdc84a34e92b54b521ce0a7671bd2eee1",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 9,
+      "observation_id": "7d57a6bf6e81f9bc",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:45.811",
+      "ended_at_utc": "2026-10-01 22:27:46.067",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=7d57a6bf6e81f9bc",
+      "original_cached_output_sha256": "26c44b061d3be30d6c2e406ebb3023f433f6714eab4c7fe6d7f7473d672e998d",
+      "original_cached_input_sha256": "d868f072db926825e835304159471da68ad5190a0cdc96c533b8ab0bfdebb6c2",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 10,
+      "observation_id": "68c1a3d1f48dc32c",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [
+        "e56adb4d1c5abdc0"
+      ],
+      "started_at_utc": "2026-10-01 22:27:56.844",
+      "ended_at_utc": "2026-10-01 22:29:43.688",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=68c1a3d1f48dc32c",
+      "original_cached_output_sha256": "9a5ef9be9ed006d8767a2bf4f549cf651bbaf91e29b303cb2b11c81173caf92c",
+      "original_cached_input_sha256": "430d2e05456fdd0001a95ae07701b3ad8137857b78bd341b09905b1d185a0cf5",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Run setup or completion",
+      "decision_summary": {
+        "text": "Run setup or completion recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 11,
+      "observation_id": "e56adb4d1c5abdc0",
+      "parent_observation_id": "68c1a3d1f48dc32c",
+      "child_observation_ids": [
+        "aca83a6619ddfd71"
+      ],
+      "started_at_utc": "2026-10-01 22:27:56.844",
+      "ended_at_utc": "2026-10-01 22:29:43.687",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e56adb4d1c5abdc0",
+      "original_cached_output_sha256": "9a5ef9be9ed006d8767a2bf4f549cf651bbaf91e29b303cb2b11c81173caf92c",
+      "original_cached_input_sha256": "4e99d2c9cadb9783f0f3e03747874947312464a0dc6178d527f6c4f50e9b9385",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Report-processing step",
+      "decision_summary": {
+        "text": "Report-processing step recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 12,
+      "observation_id": "aca83a6619ddfd71",
+      "parent_observation_id": "e56adb4d1c5abdc0",
+      "child_observation_ids": [
+        "7f0ba5fcf7e3e776",
+        "6caa32da03f6cf27",
+        "b10b6159aa73cb86",
+        "25b6cbf94f975a1d",
+        "444bc9d8cd1d6e0b",
+        "1a65972d5c6ffbdc",
+        "7a4f6ab66eb29684",
+        "68a00be91b29d618",
+        "19cb699bcd87b264",
+        "bf13a1cc5b30043d",
+        "691f28a6fc594a57",
+        "3a4f4f438a238de9",
+        "09def33ffb3e8da5",
+        "1459b20df4e82691",
+        "4842848ee3ea4101",
+        "6f74d8efb26662e0",
+        "068868c964dc7434",
+        "57bd797cc21f5f80",
+        "1f13ddd8b9f7d5db",
+        "189af49eb64ef755",
+        "e4bb563fa33776ad",
+        "e4e0066c97777ee8",
+        "2e1cfff3e6635af9",
+        "d5c094abab0feb02",
+        "667fb97de5c588a8",
+        "919c7c423d6343cc",
+        "8e06d8f90271c55a",
+        "3595c5780442f2b8",
+        "725b39b7901d518e",
+        "f29c25e929e86b8a",
+        "14177125f0bc3bbb",
+        "0ab3e3f630c76ce2",
+        "6149ad9d8c85821c",
+        "2fc45a6fc650eaef",
+        "2ade25b2db1e0aef",
+        "66190c939771a40a",
+        "91ad0a70e302a166",
+        "f0332b516979e289",
+        "bb5c84c78fbe38b7",
+        "501630f073e70416"
+      ],
+      "started_at_utc": "2026-10-01 22:27:56.857",
+      "ended_at_utc": "2026-10-01 22:29:43.687",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=aca83a6619ddfd71",
+      "original_cached_output_sha256": "ee4c8fae3b9efe5903c7943c369152022110b4d4c2c74bc3448251c3e83e479c",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Discovery flow",
+      "decision_summary": {
+        "text": "Discovery flow recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 13,
+      "observation_id": "7f0ba5fcf7e3e776",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:27:56.940",
+      "ended_at_utc": "2026-10-01 22:28:00.595",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=7f0ba5fcf7e3e776",
+      "original_cached_output_sha256": "787eff250f2777a509c4582851a994d8ae49795a95a32b515bf886ad7fe6da97",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Inspect the workspace",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 14,
+      "observation_id": "6caa32da03f6cf27",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "416c1fcc9d5a574a",
+        "c160e721785125cb",
+        "d610e1339dd13b12"
+      ],
+      "started_at_utc": "2026-10-01 22:28:00.596",
+      "ended_at_utc": "2026-10-01 22:28:01.405",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=6caa32da03f6cf27",
+      "original_cached_output_sha256": "8a24098eac17fab4e4edb61acbd927fef7abb2648371d7bcea363fcd00df5c61",
+      "original_cached_input_sha256": "e779c041a4256ff8ea7e3ccadba299023e67fa63b91325544a823db4bc49d5b3",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 15,
+      "observation_id": "416c1fcc9d5a574a",
+      "parent_observation_id": "6caa32da03f6cf27",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:00.597",
+      "ended_at_utc": "2026-10-01 22:28:00.813",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=416c1fcc9d5a574a",
+      "original_cached_output_sha256": "fcc27d10bbae791b42c1a881543930ab82478967fed705fbcd9cb8edff22041b",
+      "original_cached_input_sha256": "91b3f6de408c3666f3a17928af6dbbd5f2c41e9e6dfe702434167af1b62e8098",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 16,
+      "observation_id": "c160e721785125cb",
+      "parent_observation_id": "6caa32da03f6cf27",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:00.813",
+      "ended_at_utc": "2026-10-01 22:28:01.013",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=c160e721785125cb",
+      "original_cached_output_sha256": "a637b1ff7516494177e56a25f354755076ac87b72928c0590c4a1e34b85d5bd5",
+      "original_cached_input_sha256": "76a304216e51eb2fca496f004ec9b18f7efeaa3cc87f18dbc5f0052fdd361ca6",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 17,
+      "observation_id": "d610e1339dd13b12",
+      "parent_observation_id": "6caa32da03f6cf27",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:01.013",
+      "ended_at_utc": "2026-10-01 22:28:01.404",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=d610e1339dd13b12",
+      "original_cached_output_sha256": "780756b375a26a5f5059ef61015bcc75ee0f26bd9e09e3ad4ebe9e33fe56bfbb",
+      "original_cached_input_sha256": "87646398b506e6d0cdfc54ad5b4174b3b3598e777e3519fe7f7df6f3468d82a4",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Inspect the workspace",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 18,
+      "observation_id": "b10b6159aa73cb86",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:01.408",
+      "ended_at_utc": "2026-10-01 22:28:04.052",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b10b6159aa73cb86",
+      "original_cached_output_sha256": "e4b8368a38c521f4a56e13d0c13bdae6c957f6ee5fed262397bb4b9489eae0fc",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 19,
+      "observation_id": "25b6cbf94f975a1d",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "b113cb91921ba035"
+      ],
+      "started_at_utc": "2026-10-01 22:28:04.053",
+      "ended_at_utc": "2026-10-01 22:28:04.500",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=25b6cbf94f975a1d",
+      "original_cached_output_sha256": "691dbce218878169581296ae8438bd3f96ec62789433a3b63f92db6a9d52e22c",
+      "original_cached_input_sha256": "c3aee9327e32e94a24c9b3d3e5b0c5a779d9ddcd350ff1b6e6df5f0c414e1766",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": null,
+      "decision_summary": {
+        "text": "Tool activity recorded; this record does not contain a final exit status.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 20,
+      "observation_id": "b113cb91921ba035",
+      "parent_observation_id": "25b6cbf94f975a1d",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:04.053",
+      "ended_at_utc": "2026-10-01 22:28:04.499",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b113cb91921ba035",
+      "original_cached_output_sha256": "46f73445d9fb7b49e30d3810fc9534054969f4d80e82303e830c7584fc7142a6",
+      "original_cached_input_sha256": "e70c31216440dc081359829b0335328f7ac5e3bce0e5385ed0c0f3c19cac97b0",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 21,
+      "observation_id": "444bc9d8cd1d6e0b",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:04.509",
+      "ended_at_utc": "2026-10-01 22:28:06.262",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=444bc9d8cd1d6e0b",
+      "original_cached_output_sha256": "167016128c5d49ddecad1ebefd04e92d6fe4be52bbd712e295f9e3a852dde3fe",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 22,
+      "observation_id": "1a65972d5c6ffbdc",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "44e7bd42baffaf39"
+      ],
+      "started_at_utc": "2026-10-01 22:28:06.263",
+      "ended_at_utc": "2026-10-01 22:28:06.659",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=1a65972d5c6ffbdc",
+      "original_cached_output_sha256": "6f31ccb53c292fcd4a53953c8e1add06c8553e89feaa2245b132e038bc01dbab",
+      "original_cached_input_sha256": "737110ead5b7f92a87bd37541205af765f4a9bc135ed01a11d6f37b21d07f82d",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 23,
+      "observation_id": "44e7bd42baffaf39",
+      "parent_observation_id": "1a65972d5c6ffbdc",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:06.263",
+      "ended_at_utc": "2026-10-01 22:28:06.659",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=44e7bd42baffaf39",
+      "original_cached_output_sha256": "c364cea60686637bbdca3bc85217a4febcadb0e2bab84a7ecb3d49e1604c5706",
+      "original_cached_input_sha256": "49450b7cb10c7c0dc353f0c741a6e29439a96ff81b7f3be109db2c53d631ad64",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 24,
+      "observation_id": "7a4f6ab66eb29684",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:06.663",
+      "ended_at_utc": "2026-10-01 22:28:08.513",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=7a4f6ab66eb29684",
+      "original_cached_output_sha256": "ce68100150f3252f67c15b05be5c2b039058eed03779bab7bf5f38f02e242ccb",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 25,
+      "observation_id": "68a00be91b29d618",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "7c006ba804a3567f"
+      ],
+      "started_at_utc": "2026-10-01 22:28:08.513",
+      "ended_at_utc": "2026-10-01 22:28:08.972",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=68a00be91b29d618",
+      "original_cached_output_sha256": "7ec28406274acf7d3149c48de6df2c8a2012e296a6d4fc36c6f8e2594a1a2592",
+      "original_cached_input_sha256": "07a6c5a157d4dc38f18f03246a677f2b8317cdbf532ed963fc272179c1e24651",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 26,
+      "observation_id": "7c006ba804a3567f",
+      "parent_observation_id": "68a00be91b29d618",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:08.514",
+      "ended_at_utc": "2026-10-01 22:28:08.971",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=7c006ba804a3567f",
+      "original_cached_output_sha256": "57ffaac913ab90684de2cb5f497ac935664fc9a6476952868cafae7104fd1d2c",
+      "original_cached_input_sha256": "fec87aed1c986216e06c06cc9e0c038ff21d9b1877757efeb2a177b1602ba2c0",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 27,
+      "observation_id": "19cb699bcd87b264",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:08.975",
+      "ended_at_utc": "2026-10-01 22:28:10.705",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=19cb699bcd87b264",
+      "original_cached_output_sha256": "4335641f5774f914294f691677f2a9d93414fecad484be7974af8f211ae7c315",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 28,
+      "observation_id": "bf13a1cc5b30043d",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "e429dcceca1bf4d2"
+      ],
+      "started_at_utc": "2026-10-01 22:28:10.706",
+      "ended_at_utc": "2026-10-01 22:28:11.099",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=bf13a1cc5b30043d",
+      "original_cached_output_sha256": "05e77a2beb67206dba53f678785cef2a8df074b63ee088f0543e2685cc183813",
+      "original_cached_input_sha256": "2916fdb817f7a5b320b230167be92700b34a3cb7a3c795b57a7381e713ea7296",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 29,
+      "observation_id": "e429dcceca1bf4d2",
+      "parent_observation_id": "bf13a1cc5b30043d",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:10.706",
+      "ended_at_utc": "2026-10-01 22:28:11.098",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e429dcceca1bf4d2",
+      "original_cached_output_sha256": "f685bf603bfa35d8824f55a8b77e447a407f8c121f63465aea003b8a9598be73",
+      "original_cached_input_sha256": "0db2d790f6c0c5cf9ce459e275c0020e9584080a6c92fa3f5ef1e8babd67a8a7",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 30,
+      "observation_id": "691f28a6fc594a57",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:11.109",
+      "ended_at_utc": "2026-10-01 22:28:15.177",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=691f28a6fc594a57",
+      "original_cached_output_sha256": "fe600afd5e31ec3b4ca9d8a932b777a4a6aa9036137e140ebe1587c5202650fc",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 31,
+      "observation_id": "3a4f4f438a238de9",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "5ae60c57898ea31e"
+      ],
+      "started_at_utc": "2026-10-01 22:28:15.177",
+      "ended_at_utc": "2026-10-01 22:28:15.599",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=3a4f4f438a238de9",
+      "original_cached_output_sha256": "6ccc8363f8e8d05fe2d7a43dc895337a06b878bea502a0d748321302ac62e82d",
+      "original_cached_input_sha256": "fd69a23cf9540563c2f0fda6f07b221a6c2fd614b18da38f03b3ee2932b45e0e",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 32,
+      "observation_id": "5ae60c57898ea31e",
+      "parent_observation_id": "3a4f4f438a238de9",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:15.178",
+      "ended_at_utc": "2026-10-01 22:28:15.598",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=5ae60c57898ea31e",
+      "original_cached_output_sha256": "b072a57e0e2cd1446dc471e781a0afb22ec7008c0ad8bbc308dc3cb63edc2adf",
+      "original_cached_input_sha256": "65160458fbfd092a74bc8494e72ba33d0e0ec9bfef8a98dab85f08594a213717",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 33,
+      "observation_id": "09def33ffb3e8da5",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:15.602",
+      "ended_at_utc": "2026-10-01 22:28:18.382",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=09def33ffb3e8da5",
+      "original_cached_output_sha256": "df16b98b6ea579733df23c97911e6f30eb42bdbcbe60f15805e61f13d7c248b7",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 34,
+      "observation_id": "1459b20df4e82691",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "57b8c6b142524977"
+      ],
+      "started_at_utc": "2026-10-01 22:28:18.384",
+      "ended_at_utc": "2026-10-01 22:28:18.855",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=1459b20df4e82691",
+      "original_cached_output_sha256": "e05dbc9780c20579c7e540e4473bd3aa65cc467fbb21a8b95adf9730f646bc61",
+      "original_cached_input_sha256": "8de755c79c8406f1f1e228a6181d469685b3f62f169ac2d8d7824b0abfb7c8dc",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 35,
+      "observation_id": "57b8c6b142524977",
+      "parent_observation_id": "1459b20df4e82691",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:18.385",
+      "ended_at_utc": "2026-10-01 22:28:18.854",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=57b8c6b142524977",
+      "original_cached_output_sha256": "0bd6c50876ee58826f5034667f05d328b33fb32928929bde9d7c29b02f3d7f57",
+      "original_cached_input_sha256": "2c8fda9edbb9bc75147d37c94def9a73920489e5c67e4f8ce7041be193f3b331",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 36,
+      "observation_id": "4842848ee3ea4101",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:18.862",
+      "ended_at_utc": "2026-10-01 22:28:21.220",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=4842848ee3ea4101",
+      "original_cached_output_sha256": "b40b82da0065d219b8acaa6819bb7a71d3a79ea334494d2f05cf08f9516762b3",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 37,
+      "observation_id": "6f74d8efb26662e0",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "ed334ebf8123e626"
+      ],
+      "started_at_utc": "2026-10-01 22:28:21.223",
+      "ended_at_utc": "2026-10-01 22:28:21.598",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=6f74d8efb26662e0",
+      "original_cached_output_sha256": "017fb2307295841f900c0a45a19ac6bfdd6b4fc0913cc1a6bd8583fc3d7201a6",
+      "original_cached_input_sha256": "cf525181c4934d8349957402416112bce5150742695fbe57a686b5751f213e02",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 38,
+      "observation_id": "ed334ebf8123e626",
+      "parent_observation_id": "6f74d8efb26662e0",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:21.223",
+      "ended_at_utc": "2026-10-01 22:28:21.598",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=ed334ebf8123e626",
+      "original_cached_output_sha256": "0757527a662379e2efb70008c665fcd7b9596f912e8653770f18d8e768c847ae",
+      "original_cached_input_sha256": "34c71144669e9653e6951f11b92449491add3ec774d660003135e5525c686aca",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 39,
+      "observation_id": "068868c964dc7434",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:21.606",
+      "ended_at_utc": "2026-10-01 22:28:23.993",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=068868c964dc7434",
+      "original_cached_output_sha256": "0b55a82986e4bddf7c80b5ce7a08c405c7a3549f732d1789d5d080ce77c3864b",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 40,
+      "observation_id": "3431972903f662f2",
+      "parent_observation_id": "57bd797cc21f5f80",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:23.994",
+      "ended_at_utc": "2026-10-01 22:28:24.459",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=3431972903f662f2",
+      "original_cached_output_sha256": "12d50d6ca7d0c2690d8d40b243c98394b6615b14bca26d6a016fe0178faef7e5",
+      "original_cached_input_sha256": "652e95a67ba866aebe39d0ac62abd9f1d2b13958a1489d5e7fa4f42ab2444d3d",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Run an investigation or report-processing tool",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 41,
+      "observation_id": "57bd797cc21f5f80",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "3431972903f662f2"
+      ],
+      "started_at_utc": "2026-10-01 22:28:23.994",
+      "ended_at_utc": "2026-10-01 22:28:24.459",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=57bd797cc21f5f80",
+      "original_cached_output_sha256": "cbc378f3b5fd55b33eccaa4dad5cbe8b431221b66da183bdcdebb6d3dd328cff",
+      "original_cached_input_sha256": "b9cb3b5e93a0757f7a1773bca28c9f546688662bfb6d6b49d137ad49ab3c10b7",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 42,
+      "observation_id": "1f13ddd8b9f7d5db",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:24.462",
+      "ended_at_utc": "2026-10-01 22:28:26.297",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=1f13ddd8b9f7d5db",
+      "original_cached_output_sha256": "618005cb4c346908df8be7cb9fa0387f3d50e58fce6ed9964d96d06f599f617e",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 43,
+      "observation_id": "0a66be054bc0060a",
+      "parent_observation_id": "189af49eb64ef755",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:26.298",
+      "ended_at_utc": "2026-10-01 22:28:26.708",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=0a66be054bc0060a",
+      "original_cached_output_sha256": "dda5fda6a59c6b245fc817dedbca571ab20ead157c66d99847199ea1214f69f3",
+      "original_cached_input_sha256": "8e8051e9d53df84f9997135282eaf6fb262de5bdd70a758b35aec476d9d10df1",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 44,
+      "observation_id": "189af49eb64ef755",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "0a66be054bc0060a"
+      ],
+      "started_at_utc": "2026-10-01 22:28:26.298",
+      "ended_at_utc": "2026-10-01 22:28:26.708",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=189af49eb64ef755",
+      "original_cached_output_sha256": "eda5fb50e3a97d7226b60cf68d056cdc2d6ac716bf017f953f65ad2baf434ab5",
+      "original_cached_input_sha256": "f42ce67f419661d22533cd7ff462e0af014ca5852559ab145c61c03f68b84d58",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 45,
+      "observation_id": "e4bb563fa33776ad",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:26.717",
+      "ended_at_utc": "2026-10-01 22:28:28.520",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e4bb563fa33776ad",
+      "original_cached_output_sha256": "1cefbe66b0c805570623422afb6fd9f9a824f55beced81ad92ee0dc89b0a3584",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 46,
+      "observation_id": "e4e0066c97777ee8",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "ec5f9d4474bcba4a"
+      ],
+      "started_at_utc": "2026-10-01 22:28:28.523",
+      "ended_at_utc": "2026-10-01 22:28:28.901",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=e4e0066c97777ee8",
+      "original_cached_output_sha256": "43cb091a3c7b294d529365c8000384639f66abd31952588ea1cf22d115e5596c",
+      "original_cached_input_sha256": "926713a1883fdd663d8a26a9c391b30ee9f7f6ecd9b0105aac3817810d901bbf",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 47,
+      "observation_id": "ec5f9d4474bcba4a",
+      "parent_observation_id": "e4e0066c97777ee8",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:28.523",
+      "ended_at_utc": "2026-10-01 22:28:28.901",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=ec5f9d4474bcba4a",
+      "original_cached_output_sha256": "2b1b998eb577a801abd4df12c164ee55810f9b252625b291c669d1781616aa0e",
+      "original_cached_input_sha256": "72484d0ad47cf3eb34654d596203304c35bf86d624408859d276417e78db06e0",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 48,
+      "observation_id": "2e1cfff3e6635af9",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:28.909",
+      "ended_at_utc": "2026-10-01 22:28:30.760",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=2e1cfff3e6635af9",
+      "original_cached_output_sha256": "e9f83f8f0eac4fc9272e6bed47f53dbe57e4397ea80d7d14da496db59a38b210",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 49,
+      "observation_id": "d5c094abab0feb02",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "623d4099476f6c18"
+      ],
+      "started_at_utc": "2026-10-01 22:28:30.761",
+      "ended_at_utc": "2026-10-01 22:28:31.158",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=d5c094abab0feb02",
+      "original_cached_output_sha256": "b99b92bc342b8c8fb670cec8496a13b489b46644f26a15835db67c1997ac0689",
+      "original_cached_input_sha256": "8f2bea56d3a1b2ac9ffe7f5ed0196fb9538522ea9f70f6ea4294cdd0c1ecbd5f",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 50,
+      "observation_id": "623d4099476f6c18",
+      "parent_observation_id": "d5c094abab0feb02",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:30.762",
+      "ended_at_utc": "2026-10-01 22:28:31.158",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=623d4099476f6c18",
+      "original_cached_output_sha256": "20dce638946efac942b24db262c797978374898afdc7745db7c6eed6118aad7f",
+      "original_cached_input_sha256": "5d231af0a07f75308f7ea83734a843454bfceb507e9941e89456fba8099b6339",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 51,
+      "observation_id": "667fb97de5c588a8",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:31.167",
+      "ended_at_utc": "2026-10-01 22:28:48.852",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=667fb97de5c588a8",
+      "original_cached_output_sha256": "09f696d6bca1b93116dd5c72e5374c53adf456efb816be836deebca5fcf5f436",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "memory_editor_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 52,
+      "observation_id": "919c7c423d6343cc",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:48.853",
+      "ended_at_utc": "2026-10-01 22:28:48.862",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=919c7c423d6343cc",
+      "original_cached_output_sha256": "3a5b2f81a9f7f0441a6cfc86e969e725d4ecf96e5a67048382410de9ddc66bd9",
+      "original_cached_input_sha256": "9e920eb666e765d0954d871929e6ab03d5a0bfefb8db22043ffcf68f5807e6ab",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": null,
+      "decision_summary": {
+        "text": "Tool activity recorded; this record does not contain a final exit status.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 53,
+      "observation_id": "8e06d8f90271c55a",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:48.865",
+      "ended_at_utc": "2026-10-01 22:28:51.085",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=8e06d8f90271c55a",
+      "original_cached_output_sha256": "d8ff0b7ba1cf9b0a75a91f835ba4ed9099a90dfeac708a073ed6dbd3407accd2",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "memory_viewer_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 54,
+      "observation_id": "3595c5780442f2b8",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "bc0c5b7f795eccb7"
+      ],
+      "started_at_utc": "2026-10-01 22:28:51.092",
+      "ended_at_utc": "2026-10-01 22:28:51.093",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=3595c5780442f2b8",
+      "original_cached_output_sha256": "d810cb298ea24bdf73a4f7130c622d0754c5aad4c84c41e897d20ffb12475dae",
+      "original_cached_input_sha256": "55e7efc53869525e070fc1325564b27fec60ec33e6ed51c40309e65a3486c4b1",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": null,
+      "decision_summary": {
+        "text": "Tool activity recorded; this record does not contain a final exit status.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 55,
+      "observation_id": "bc0c5b7f795eccb7",
+      "parent_observation_id": "3595c5780442f2b8",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:51.093",
+      "ended_at_utc": "2026-10-01 22:28:51.093",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=bc0c5b7f795eccb7",
+      "original_cached_output_sha256": "2fcb5e328818c9512eefe3a8319fd03ae74d7958c6d6dcc3a53875b14d8ab749",
+      "original_cached_input_sha256": "a8ec3927a04bb6d990e9d8a97294a6c380734d196f3f831ca701e5fbcc8adcad",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Run setup or completion",
+      "decision_summary": {
+        "text": "Run setup or completion recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 56,
+      "observation_id": "725b39b7901d518e",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:51.095",
+      "ended_at_utc": "2026-10-01 22:28:56.496",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=725b39b7901d518e",
+      "original_cached_output_sha256": "ad02bf689dc24c7bca7f2dc043a246be454ec1f61c6847cf946de6ea303fe9d8",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 57,
+      "observation_id": "b6770250a6508707",
+      "parent_observation_id": "f29c25e929e86b8a",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:56.497",
+      "ended_at_utc": "2026-10-01 22:28:56.996",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b6770250a6508707",
+      "original_cached_output_sha256": "7ff7690583e5ae27243e2eebca73034fd7c4b888c9a317f19c2a4550bd8b950b",
+      "original_cached_input_sha256": "c7e3c27c0d4357dfd0d8b5013f803ef0275b64870c889293199b52ed0c785641",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 58,
+      "observation_id": "f29c25e929e86b8a",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "b6770250a6508707"
+      ],
+      "started_at_utc": "2026-10-01 22:28:56.497",
+      "ended_at_utc": "2026-10-01 22:28:56.997",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=f29c25e929e86b8a",
+      "original_cached_output_sha256": "72ad3b1238e26c072be26e8a5ac2bf9068421657af493c94a0c384916346c609",
+      "original_cached_input_sha256": "8622baceb4c36fd7d4cd483bcb26d8bfd0197836a51893fdca8884a3276ea4b3",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": null,
+      "decision_summary": {
+        "text": "Tool activity recorded; this record does not contain a final exit status.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 59,
+      "observation_id": "14177125f0bc3bbb",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:28:57.008",
+      "ended_at_utc": "2026-10-01 22:29:03.848",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=14177125f0bc3bbb",
+      "original_cached_output_sha256": "21eba2eaaa4b153ce19edc225dcbed21698b2922c4be67069b60d1ee88559236",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "memory_editor_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 60,
+      "observation_id": "0ab3e3f630c76ce2",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:03.849",
+      "ended_at_utc": "2026-10-01 22:29:03.858",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=0ab3e3f630c76ce2",
+      "original_cached_output_sha256": "f9c088c518de7e45c520e2341dc833cd0bfd5723def466407422b4cda8d2563e",
+      "original_cached_input_sha256": "1194d6172686d1116c4d4ed9d2cf61bf1cc403a8a609217200558a5a7590d497",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": null,
+      "decision_summary": {
+        "text": "Tool activity recorded; this record does not contain a final exit status.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 61,
+      "observation_id": "6149ad9d8c85821c",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:03.861",
+      "ended_at_utc": "2026-10-01 22:29:11.156",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=6149ad9d8c85821c",
+      "original_cached_output_sha256": "0442387fff432ae3f86e70e763a81cd5c302055426718fed55cd3178a0cf6869",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 62,
+      "observation_id": "2fc45a6fc650eaef",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "903f2d9e5a20855c"
+      ],
+      "started_at_utc": "2026-10-01 22:29:11.162",
+      "ended_at_utc": "2026-10-01 22:29:11.599",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=2fc45a6fc650eaef",
+      "original_cached_output_sha256": "85822cde9f48dccae3751c1526027f49754b21620f75f45943c097f28c6e24fd",
+      "original_cached_input_sha256": "a2aafc5fe88e03c6ea10efc76f8911326664f80c3219e91959f9ae715c8aff8b",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 63,
+      "observation_id": "903f2d9e5a20855c",
+      "parent_observation_id": "2fc45a6fc650eaef",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:11.163",
+      "ended_at_utc": "2026-10-01 22:29:11.599",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=903f2d9e5a20855c",
+      "original_cached_output_sha256": "e76fcd84e02da1fea1e4230b778e26e8c99b9b1a43024c445700ad3b2a8d1385",
+      "original_cached_input_sha256": "8f67ae341b28597350cd0e742ba7c64693e6d03c8765f5179709277d080ba38e",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Read a repository file or saved report",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 64,
+      "observation_id": "2ade25b2db1e0aef",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:11.606",
+      "ended_at_utc": "2026-10-01 22:29:21.854",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=2ade25b2db1e0aef",
+      "original_cached_output_sha256": "9b84268b1f579e9ee389d7cd2e8ba01d75e74b34113ed067bac979294bd4b0af",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 65,
+      "observation_id": "66190c939771a40a",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "7c35eabf10888697"
+      ],
+      "started_at_utc": "2026-10-01 22:29:21.855",
+      "ended_at_utc": "2026-10-01 22:29:22.202",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=66190c939771a40a",
+      "original_cached_output_sha256": "b9327a6543f7fe5f579d71d24969392c5f6616e13581339abd0fda476a1c0afb",
+      "original_cached_input_sha256": "0b5adf9241ad38e8af71474007ef56d560abbe88cc1f96dfe49df6bfebbab683",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 66,
+      "observation_id": "7c35eabf10888697",
+      "parent_observation_id": "66190c939771a40a",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:21.855",
+      "ended_at_utc": "2026-10-01 22:29:22.201",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=7c35eabf10888697",
+      "original_cached_output_sha256": "a6eca34aade6d4eb38f97c1a3af9ca88457f65a65af48e9cf001f4b0f3941567",
+      "original_cached_input_sha256": "d9fa021d3b9a7710aa9001864d0ed1aea73a4e69adf8247b4280623eb49c7627",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Run an investigation or report-processing tool",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 67,
+      "observation_id": "91ad0a70e302a166",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:22.210",
+      "ended_at_utc": "2026-10-01 22:29:26.307",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=91ad0a70e302a166",
+      "original_cached_output_sha256": "09055676285592e356f1a79aa738151ef5706d247304b84432d57712c45217a3",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Check or repair the saved report format",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Requested 1 tool operation(s).",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 68,
+      "observation_id": "339e0705f8c47caa",
+      "parent_observation_id": "f0332b516979e289",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:26.308",
+      "ended_at_utc": "2026-10-01 22:29:26.777",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=339e0705f8c47caa",
+      "original_cached_output_sha256": "12a02e664cc4566c458a3460cc79d27ee75ee0ad42b8c531091437de058be12d",
+      "original_cached_input_sha256": "60deba822d43d4f272d4aaa1b8ec4b4049bc14aa1f8fd356d27fc0bd5772ca95",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "K8s Sandbox",
+          "action_summary": "Check or repair the saved report format",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "K8s Sandbox tool execution",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 69,
+      "observation_id": "f0332b516979e289",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [
+        "339e0705f8c47caa"
+      ],
+      "started_at_utc": "2026-10-01 22:29:26.308",
+      "ended_at_utc": "2026-10-01 22:29:26.777",
+      "type": "SPAN",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=f0332b516979e289",
+      "original_cached_output_sha256": "67c8e103df95f9f99f6958603333b4243724d3501ccb58878b533267c15ac0ee",
+      "original_cached_input_sha256": "896be95843589ca70686a22186488e42685c1f1fd35bb6a7cb55ce4c7068b0a4",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [
+        {
+          "tool_name": "shell_tool",
+          "action_summary": "Perform a tool operation",
+          "original_arguments_redacted": true
+        }
+      ],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Tool-call record",
+      "tool_exit_code": 0,
+      "decision_summary": {
+        "text": "Tool completed successfully.",
+        "classification": "Verified exit status or safe activity summary"
+      }
+    },
+    {
+      "sequence": 70,
+      "observation_id": "bb5c84c78fbe38b7",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:26.782",
+      "ended_at_utc": "2026-10-01 22:29:34.891",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=bb5c84c78fbe38b7",
+      "original_cached_output_sha256": "b8cf864cb79b2b9ef044dbc5ea5de07e2dd6d94fa4cd52fb4ed8d247825dd0c0",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Returned a report or investigation update.",
+        "classification": "Safe summary of visible activity, not a quotation or private reasoning reconstruction"
+      }
+    },
+    {
+      "sequence": 71,
+      "observation_id": "501630f073e70416",
+      "parent_observation_id": "aca83a6619ddfd71",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:34.895",
+      "ended_at_utc": "2026-10-01 22:29:43.501",
+      "type": "GENERATION",
+      "stage": "Read code and report findings",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=501630f073e70416",
+      "original_cached_output_sha256": "99d5b4e0a99a090ad72349e45ab3270abe05077e886cd96b74af8ff8ebe5b4ca",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16:peft:262144",
+      "event_name": "Detector model response",
+      "decision_summary": {
+        "text": "Reported six possible issues, including the unsafe data-reading bug.",
+        "classification": "Evidence-based summary of the submitted report, not a quotation"
+      }
+    },
+    {
+      "sequence": 72,
+      "observation_id": "7bf76303c2675711",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [
+        "5715d7127e770c9c"
+      ],
+      "started_at_utc": "2026-10-01 22:29:43.690",
+      "ended_at_utc": "2026-10-01 22:29:49.356",
+      "type": "SPAN",
+      "stage": "Check the report",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=7bf76303c2675711",
+      "original_cached_output_sha256": "8d0af3467641d270014dd57f29c44c5e5d9b806dd22a4ae0c4d06706cf04fdc4",
+      "original_cached_input_sha256": "b679785c9c83383f9aefc49e2e23fb9186bb8b4a318c5e4b599582cf7ca6d439",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Run setup or completion",
+      "decision_summary": {
+        "text": "Run setup or completion recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 73,
+      "observation_id": "5715d7127e770c9c",
+      "parent_observation_id": "7bf76303c2675711",
+      "child_observation_ids": [
+        "a328d0d23a282bc2"
+      ],
+      "started_at_utc": "2026-10-01 22:29:43.694",
+      "ended_at_utc": "2026-10-01 22:29:49.355",
+      "type": "SPAN",
+      "stage": "Check the report",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=5715d7127e770c9c",
+      "original_cached_output_sha256": "7483e620e9e8b708caaa8d9740010dbfb7b791f4b33411b895f4d393ccf3e40c",
+      "original_cached_input_sha256": "64454cf6f6bc6e462c5dcdd51e258cc6964e11325785e57c5239cf8af48a2fb6",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Known-bug checker flow",
+      "decision_summary": {
+        "text": "Known-bug checker flow recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 74,
+      "observation_id": "a328d0d23a282bc2",
+      "parent_observation_id": "5715d7127e770c9c",
+      "child_observation_ids": [
+        "b4c206cfd067ce51"
+      ],
+      "started_at_utc": "2026-10-01 22:29:43.765",
+      "ended_at_utc": "2026-10-01 22:29:49.355",
+      "type": "SPAN",
+      "stage": "Check the report",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=a328d0d23a282bc2",
+      "original_cached_output_sha256": "0bc76bef09ff01fb6014190ff9973ed2f1a3b5f640cc32cdc6f4f17f538268bd",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Known-bug checker flow",
+      "decision_summary": {
+        "text": "Known-bug checker flow recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 75,
+      "observation_id": "b4c206cfd067ce51",
+      "parent_observation_id": "a328d0d23a282bc2",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:44.135",
+      "ended_at_utc": "2026-10-01 22:29:49.354",
+      "type": "GENERATION",
+      "stage": "Check the report",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=b4c206cfd067ce51",
+      "original_cached_output_sha256": "05b7174420e03861961df96d9119adf20b49e1bed80a7f81d658e4b78d1b4488",
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "model": "gpt-5.6-luna",
+      "event_name": "Known-bug checker response",
+      "decision_summary": {
+        "text": "The checker credited the unsafe data-reading finding.",
+        "classification": "Evidence-based summary of the known-bug checker decision, not a quotation"
+      },
+      "verified_judge_outcome": "pass"
+    },
+    {
+      "sequence": 76,
+      "observation_id": "ed3a2bc64953a4c9",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:49.356",
+      "ended_at_utc": "2026-10-01 22:29:49.398",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=ed3a2bc64953a4c9",
+      "original_cached_output_sha256": "72cd08e64be381a5f56cbf3719004ec9d932e508ee82819454beb1ff72a45a8b",
+      "original_cached_input_sha256": "c38105cfd0b2456cff0f0ed7762cde28abe3590a5440b7703ce163e4e49cd718",
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Run validation metadata",
+      "decision_summary": {
+        "text": "Run validation metadata recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    },
+    {
+      "sequence": 77,
+      "observation_id": "be0fb34ca15b7d9e",
+      "parent_observation_id": "53bd7ed91a818378",
+      "child_observation_ids": [],
+      "started_at_utc": "2026-10-01 22:29:49.399",
+      "ended_at_utc": "2026-10-01 22:29:49.399",
+      "type": "SPAN",
+      "stage": "Run setup or completion",
+      "source_url": "https://langfuse.depthfirst.com/project/cmmcs3qyd0006wk0714lsqqeq/traces/baca55768967b765d6824c7168d8a6f7?observation=be0fb34ca15b7d9e",
+      "original_cached_output_sha256": null,
+      "original_cached_input_sha256": null,
+      "safe_actual_text_excerpts": [],
+      "tool_activity": [],
+      "redactions": [
+        "Request prompts, private reasoning, unsafe visible prose, vulnerable code, most command arguments, payloads and reproduction instructions are omitted.",
+        "Original visible text is omitted; labeled summaries preserve the safe action or outcome."
+      ],
+      "event_name": "Run validation metadata",
+      "decision_summary": {
+        "text": "Run validation metadata recorded.",
+        "classification": "Safe summary of event metadata"
+      }
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "read_at_utc": "2026-10-03T00:30:57.772142+00:00",
+  "scope": "Code-file citations for the three featured historical Early RL step 5 versus Final RL step 200 trace pairs.",
+  "files": [
+    {
+      "repository": "igniterealtime/Openfire",
+      "repository_commit": "83f653f8d0601ff3667e1c5cf3ac18834f0d4a24",
+      "file": "xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java",
+      "state": "verified",
+      "html_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java",
+      "blob_sha": "01d45ca6476bcafa68cef5088abcb55ca465145f",
+      "size": 7321,
+      "uses": [
+        {
+          "task_key": "openfire",
+          "arm": "base",
+          "observation_id": "2158f2090b42cab8"
+        },
+        {
+          "task_key": "openfire",
+          "arm": "final",
+          "observation_id": "cc88084c8a61e672"
+        }
+      ],
+      "verification": "GitHub contents API metadata at exact frozen commit; file contents were not inspected."
+    },
+    {
+      "repository": "igniterealtime/Openfire",
+      "repository_commit": "83f653f8d0601ff3667e1c5cf3ac18834f0d4a24",
+      "file": "xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java",
+      "state": "verified",
+      "html_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java",
+      "blob_sha": "dad9dd48d929bdf8ff1bafa59e44209c17b5b27f",
+      "size": 32492,
+      "uses": [
+        {
+          "task_key": "openfire",
+          "arm": "base",
+          "observation_id": "c33ae374e605e6d9"
+        },
+        {
+          "task_key": "openfire",
+          "arm": "final",
+          "observation_id": "3a36cf6701ea31a7"
+        }
+      ],
+      "verification": "GitHub contents API metadata at exact frozen commit; file contents were not inspected."
+    },
+    {
+      "repository": "OpenC3/cosmos",
+      "repository_commit": "24ca2102180a28d9bb83a7251497865b50e0cc55",
+      "file": "openc3/lib/openc3/core_ext/string.rb",
+      "state": "verified",
+      "html_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/core_ext/string.rb",
+      "blob_sha": "cf4dd5851ba463b09d19b08d37243138f6a4c9ee",
+      "size": 13593,
+      "uses": [
+        {
+          "task_key": "cosmos",
+          "arm": "base",
+          "observation_id": "fc0443ad9c0dcf4b"
+        },
+        {
+          "task_key": "cosmos",
+          "arm": "final",
+          "observation_id": "5c9f41d317416323"
+        }
+      ],
+      "verification": "GitHub contents API metadata at exact frozen commit; file contents were not inspected."
+    },
+    {
+      "repository": "OpenC3/cosmos",
+      "repository_commit": "24ca2102180a28d9bb83a7251497865b50e0cc55",
+      "file": "openc3/lib/openc3/conversions/object_read_conversion.rb",
+      "state": "verified",
+      "html_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/conversions/object_read_conversion.rb",
+      "blob_sha": "ca0fa3ac966359a8707d310e91f53e037970d789",
+      "size": 2846,
+      "uses": [
+        {
+          "task_key": "cosmos",
+          "arm": "base",
+          "observation_id": "8f40bc3e84931ecb"
+        },
+        {
+          "task_key": "cosmos",
+          "arm": "final",
+          "observation_id": "f65b956c0e3117f8"
+        }
+      ],
+      "verification": "GitHub contents API metadata at exact frozen commit; file contents were not inspected."
+    },
+    {
+      "repository": "jonschlinkert/set-value",
+      "repository_commit": "7bd5011d82e583305a191a9a062abfe177ec29ad",
+      "file": "index.js",
+      "state": "verified",
+      "html_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/index.js",
+      "blob_sha": "9c838697d05541b0d2933a53bf523269c3f71564",
+      "size": 2333,
+      "uses": [
+        {
+          "task_key": "setvalue",
+          "arm": "base",
+          "observation_id": "188ddbc69c6b8f1b"
+        },
+        {
+          "task_key": "setvalue",
+          "arm": "final",
+          "observation_id": "a4e6606d27c00af9"
+        }
+      ],
+      "verification": "GitHub contents API metadata at exact frozen commit; file contents were not inspected."
+    },
+    {
+      "repository": "jonschlinkert/set-value",
+      "repository_commit": "7bd5011d82e583305a191a9a062abfe177ec29ad",
+      "file": "test.js",
+      "state": "verified",
+      "html_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/test.js",
+      "blob_sha": "83ae83a17cb171d11953e36667067c83c6a48e20",
+      "size": 6159,
+      "uses": [
+        {
+          "task_key": "setvalue",
+          "arm": "base",
+          "observation_id": "0caeafc00b418668"
+        },
+        {
+          "task_key": "setvalue",
+          "arm": "final",
+          "observation_id": "0b622506d0765883"
+        }
+      ],
+      "verification": "GitHub contents API metadata at exact frozen commit; file contents were not inspected."
+    }
+  ],
+  "by_task": {
+    "openfire": {
+      "xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java": {
+        "html_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/FaviconServlet.java",
+        "blob_sha": "01d45ca6476bcafa68cef5088abcb55ca465145f",
+        "state": "verified"
+      },
+      "xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java": {
+        "html_url": "https://github.com/igniterealtime/Openfire/blob/83f653f8d0601ff3667e1c5cf3ac18834f0d4a24/xmppserver/src/main/java/org/jivesoftware/util/XMLProperties.java",
+        "blob_sha": "dad9dd48d929bdf8ff1bafa59e44209c17b5b27f",
+        "state": "verified"
+      }
+    },
+    "cosmos": {
+      "openc3/lib/openc3/core_ext/string.rb": {
+        "html_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/core_ext/string.rb",
+        "blob_sha": "cf4dd5851ba463b09d19b08d37243138f6a4c9ee",
+        "state": "verified"
+      },
+      "openc3/lib/openc3/conversions/object_read_conversion.rb": {
+        "html_url": "https://github.com/OpenC3/cosmos/blob/24ca2102180a28d9bb83a7251497865b50e0cc55/openc3/lib/openc3/conversions/object_read_conversion.rb",
+        "blob_sha": "ca0fa3ac966359a8707d310e91f53e037970d789",
+        "state": "verified"
+      }
+    },
+    "setvalue": {
+      "index.js": {
+        "html_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/index.js",
+        "blob_sha": "9c838697d05541b0d2933a53bf523269c3f71564",
+        "state": "verified"
+      },
+      "test.js": {
+        "html_url": "https://github.com/jonschlinkert/set-value/blob/7bd5011d82e583305a191a9a062abfe177ec29ad/test.js",
+        "blob_sha": "83ae83a17cb171d11953e36667067c83c6a48e20",
+        "state": "verified"
+      }
+    }
+  }
+}
