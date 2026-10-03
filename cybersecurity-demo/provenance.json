@@ -168,13 +168,13 @@
     },
     {
       "path": "_next/static/css/1b2c02e139865565.css",
-      "bytes": 6953,
-      "sha256": "b8b9e50c7dea8a4e8ec99955df79184b07a51b92abd5e267764c34bc32301bc7"
+      "bytes": 7036,
+      "sha256": "33dadd5940970693e2576672079d0aa8425ac01afb29898a23c090362147156e"
     },
     {
       "path": "_next/static/css/ba15b3b843556e70.css",
-      "bytes": 34721,
-      "sha256": "e0a33952057ff4ad4d50a82d83c7e8912874ee820bfb355b661b5158f5c49490"
+      "bytes": 34804,
+      "sha256": "0b3673876bef242d93856be224ebddb3509258e83a08d51e4bb709ade47bb50a"
     },
     {
       "path": "_not-found/__next._full.txt",
@@ -468,8 +468,8 @@
     },
     {
       "path": "source/src/app/rl.css",
-      "bytes": 7006,
-      "sha256": "17582feb13a6d6a1b3a3fdec5ab3671c8dfdaf66c844e9594d12bb01a650251b"
+      "bytes": 7089,
+      "sha256": "6e0c603dd642f9bbba8873da0e186a4b000424fb9d31e1c61339756fd5f083ca"
     },
     {
       "path": "source/src/lib/rl-data.json",
@@ -545,6 +545,7 @@
     "url_rewrites": {
       "https://github.com/patcherai/dfbench/tree/rl-nvidia-presentation": "https://github.com/rapturt9/gtc-post-training-demo-ui/tree/codex/cybersecurity-demo/cybersecurity-demo",
       "https://github.com/patcherai/dfbench/blob/rl-nvidia-presentation/demos/rl-nvidia/traces/": "https://github.com/rapturt9/gtc-post-training-demo-ui/blob/codex/cybersecurity-demo/cybersecurity-demo/traces/"
-    }
+    },
+    "post_export_css_repair": "Set visible Next button background; same rule retained in editable source."
   }
 }
